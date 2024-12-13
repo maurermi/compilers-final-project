@@ -1,0 +1,589 @@
+{
+  "functions": [
+    {
+      "args": [
+        {
+          "name": "input",
+          "type": "int"
+        }
+      ],
+      "instrs": [
+        {
+          "label": "l0"
+        },
+        {
+          "dest": "v1",
+          "op": "const",
+          "type": "int",
+          "value": 1
+        },
+        {
+          "label": "l1"
+        },
+        {
+          "args": [
+            "v1"
+          ],
+          "dest": "index",
+          "op": "id",
+          "type": "int"
+        },
+        {
+          "label": "l2"
+        },
+        {
+          "args": [
+            "index"
+          ],
+          "dest": "v2",
+          "op": "id",
+          "type": "int"
+        },
+        {
+          "label": "l3"
+        },
+        {
+          "args": [
+            "v2",
+            "input"
+          ],
+          "dest": "v4",
+          "op": "lt",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "v4"
+          ],
+          "labels": [
+            "l4",
+            "l49"
+          ],
+          "op": "br"
+        },
+        {
+          "label": "l4"
+        },
+        {
+          "args": [
+            "index"
+          ],
+          "dest": "v5",
+          "op": "id",
+          "type": "int"
+        },
+        {
+          "label": "l5"
+        },
+        {
+          "dest": "v6",
+          "op": "const",
+          "type": "int",
+          "value": 3
+        },
+        {
+          "label": "l6"
+        },
+        {
+          "args": [
+            "v5",
+            "v6"
+          ],
+          "dest": "v7",
+          "op": "div",
+          "type": "int"
+        },
+        {
+          "label": "l7"
+        },
+        {
+          "args": [
+            "v7"
+          ],
+          "dest": "div3",
+          "op": "id",
+          "type": "int"
+        },
+        {
+          "label": "l8"
+        },
+        {
+          "args": [
+            "div3"
+          ],
+          "dest": "v8",
+          "op": "id",
+          "type": "int"
+        },
+        {
+          "label": "l9"
+        },
+        {
+          "dest": "v9",
+          "op": "const",
+          "type": "int",
+          "value": 3
+        },
+        {
+          "label": "l10"
+        },
+        {
+          "args": [
+            "v8",
+            "v9"
+          ],
+          "dest": "v10",
+          "op": "mul",
+          "type": "int"
+        },
+        {
+          "label": "l11"
+        },
+        {
+          "args": [
+            "index"
+          ],
+          "dest": "v11",
+          "op": "id",
+          "type": "int"
+        },
+        {
+          "label": "l12"
+        },
+        {
+          "args": [
+            "v10",
+            "v11"
+          ],
+          "dest": "v12",
+          "op": "eq",
+          "type": "bool"
+        },
+        {
+          "label": "l13"
+        },
+        {
+          "args": [
+            "v12"
+          ],
+          "dest": "isFizz",
+          "op": "id",
+          "type": "bool"
+        },
+        {
+          "label": "l14"
+        },
+        {
+          "args": [
+            "index"
+          ],
+          "dest": "v13",
+          "op": "id",
+          "type": "int"
+        },
+        {
+          "label": "l15"
+        },
+        {
+          "dest": "v14",
+          "op": "const",
+          "type": "int",
+          "value": 5
+        },
+        {
+          "label": "l16"
+        },
+        {
+          "args": [
+            "v13",
+            "v14"
+          ],
+          "dest": "v15",
+          "op": "div",
+          "type": "int"
+        },
+        {
+          "label": "l17"
+        },
+        {
+          "args": [
+            "v15"
+          ],
+          "dest": "div5",
+          "op": "id",
+          "type": "int"
+        },
+        {
+          "label": "l18"
+        },
+        {
+          "args": [
+            "div5"
+          ],
+          "dest": "v16",
+          "op": "id",
+          "type": "int"
+        },
+        {
+          "label": "l19"
+        },
+        {
+          "dest": "v17",
+          "op": "const",
+          "type": "int",
+          "value": 5
+        },
+        {
+          "label": "l20"
+        },
+        {
+          "args": [
+            "v16",
+            "v17"
+          ],
+          "dest": "v18",
+          "op": "mul",
+          "type": "int"
+        },
+        {
+          "label": "l21"
+        },
+        {
+          "args": [
+            "index"
+          ],
+          "dest": "v19",
+          "op": "id",
+          "type": "int"
+        },
+        {
+          "label": "l22"
+        },
+        {
+          "args": [
+            "v18",
+            "v19"
+          ],
+          "dest": "v20",
+          "op": "eq",
+          "type": "bool"
+        },
+        {
+          "label": "l23"
+        },
+        {
+          "args": [
+            "v20"
+          ],
+          "dest": "isBuzz",
+          "op": "id",
+          "type": "bool"
+        },
+        {
+          "label": "l24"
+        },
+        {
+          "args": [
+            "isFizz"
+          ],
+          "dest": "v22",
+          "op": "id",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "v22"
+          ],
+          "labels": [
+            "l25",
+            "l36"
+          ],
+          "op": "br"
+        },
+        {
+          "label": "l25"
+        },
+        {
+          "args": [
+            "isBuzz"
+          ],
+          "dest": "v24",
+          "op": "id",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "v24"
+          ],
+          "labels": [
+            "l26",
+            "l31"
+          ],
+          "op": "br"
+        },
+        {
+          "label": "l26"
+        },
+        {
+          "dest": "v25",
+          "op": "const",
+          "type": "int",
+          "value": 0
+        },
+        {
+          "label": "l27"
+        },
+        {
+          "dest": "v26",
+          "op": "const",
+          "type": "int",
+          "value": 1
+        },
+        {
+          "label": "l28"
+        },
+        {
+          "args": [
+            "v25",
+            "v26"
+          ],
+          "dest": "v27",
+          "op": "sub",
+          "type": "int"
+        },
+        {
+          "label": "l29"
+        },
+        {
+          "args": [
+            "v27"
+          ],
+          "op": "print"
+        },
+        {
+          "label": "l30"
+        },
+        {
+          "dest": "v28",
+          "op": "const",
+          "type": "int",
+          "value": 0
+        },
+        {
+          "labels": [
+            "l36"
+          ],
+          "op": "jmp"
+        },
+        {
+          "label": "l31"
+        },
+        {
+          "dest": "v29",
+          "op": "const",
+          "type": "int",
+          "value": 0
+        },
+        {
+          "label": "l32"
+        },
+        {
+          "dest": "v30",
+          "op": "const",
+          "type": "int",
+          "value": 2
+        },
+        {
+          "label": "l33"
+        },
+        {
+          "args": [
+            "v29",
+            "v30"
+          ],
+          "dest": "v31",
+          "op": "sub",
+          "type": "int"
+        },
+        {
+          "label": "l34"
+        },
+        {
+          "args": [
+            "v31"
+          ],
+          "op": "print"
+        },
+        {
+          "label": "l35"
+        },
+        {
+          "dest": "v32",
+          "op": "const",
+          "type": "int",
+          "value": 0
+        },
+        {
+          "labels": [
+            "l45"
+          ],
+          "op": "jmp"
+        },
+        {
+          "label": "l36"
+        },
+        {
+          "args": [
+            "isBuzz"
+          ],
+          "dest": "v34",
+          "op": "id",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "v34"
+          ],
+          "labels": [
+            "l37",
+            "l42"
+          ],
+          "op": "br"
+        },
+        {
+          "label": "l37"
+        },
+        {
+          "dest": "v35",
+          "op": "const",
+          "type": "int",
+          "value": 0
+        },
+        {
+          "label": "l38"
+        },
+        {
+          "dest": "v36",
+          "op": "const",
+          "type": "int",
+          "value": 3
+        },
+        {
+          "label": "l39"
+        },
+        {
+          "args": [
+            "v35",
+            "v36"
+          ],
+          "dest": "v37",
+          "op": "sub",
+          "type": "int"
+        },
+        {
+          "label": "l40"
+        },
+        {
+          "args": [
+            "v37"
+          ],
+          "op": "print"
+        },
+        {
+          "label": "l41"
+        },
+        {
+          "dest": "v38",
+          "op": "const",
+          "type": "int",
+          "value": 0
+        },
+        {
+          "labels": [
+            "l45"
+          ],
+          "op": "jmp"
+        },
+        {
+          "label": "l42"
+        },
+        {
+          "args": [
+            "index"
+          ],
+          "dest": "v39",
+          "op": "id",
+          "type": "int"
+        },
+        {
+          "label": "l43"
+        },
+        {
+          "args": [
+            "v39"
+          ],
+          "op": "print"
+        },
+        {
+          "label": "l44"
+        },
+        {
+          "dest": "v40",
+          "op": "const",
+          "type": "int",
+          "value": 0
+        },
+        {
+          "label": "l45"
+        },
+        {
+          "args": [
+            "index"
+          ],
+          "dest": "v41",
+          "op": "id",
+          "type": "int"
+        },
+        {
+          "label": "l46"
+        },
+        {
+          "dest": "v42",
+          "op": "const",
+          "type": "int",
+          "value": 1
+        },
+        {
+          "label": "l47"
+        },
+        {
+          "args": [
+            "v41",
+            "v42"
+          ],
+          "dest": "v43",
+          "op": "add",
+          "type": "int"
+        },
+        {
+          "label": "l48"
+        },
+        {
+          "args": [
+            "v43"
+          ],
+          "dest": "index",
+          "op": "id",
+          "type": "int"
+        },
+        {
+          "labels": [
+            "l2"
+          ],
+          "op": "jmp"
+        }
+      ],
+      "name": "main"
+    }
+  ]
+}

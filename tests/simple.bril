@@ -1,0 +1,21 @@
+@main() {
+  n: int = const 10;
+  one: int = const 1;
+  a: int = const 1;
+  b: int = add n one;
+  magic: int = const 50;
+
+  branch: bool = gt b a;
+  print branch;
+  br branch .if .else;
+.if:
+  b = id a;
+  jmp .then;
+.else:
+  b = add b a;
+.then:
+  # There should be a 2-way phi node here.
+  c: int = add a b;
+  d: int = add a a;
+  ret d;
+}

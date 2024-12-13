@@ -1,0 +1,605 @@
+{
+  "functions": [
+    {
+      "args": [
+        {
+          "name": "in",
+          "type": "int"
+        }
+      ],
+      "instrs": [
+        {
+          "label": "l0"
+        },
+        {
+          "dest": "ten",
+          "op": "const",
+          "type": "int",
+          "value": 10
+        },
+        {
+          "label": "l1"
+        },
+        {
+          "dest": "zero",
+          "op": "const",
+          "type": "int",
+          "value": 0
+        },
+        {
+          "label": "l2"
+        },
+        {
+          "dest": "one",
+          "op": "const",
+          "type": "int",
+          "value": 1
+        },
+        {
+          "label": "l3"
+        },
+        {
+          "dest": "index",
+          "op": "const",
+          "type": "int",
+          "value": 1
+        },
+        {
+          "label": "l4"
+        },
+        {
+          "dest": "not_finished",
+          "op": "const",
+          "type": "bool",
+          "value": true
+        },
+        {
+          "args": [
+            "not_finished"
+          ],
+          "labels": [
+            "l5",
+            "l10"
+          ],
+          "op": "br"
+        },
+        {
+          "label": "l5"
+        },
+        {
+          "args": [
+            "ten",
+            "index"
+          ],
+          "dest": "power",
+          "funcs": [
+            "pow"
+          ],
+          "op": "call",
+          "type": "int"
+        },
+        {
+          "label": "l6"
+        },
+        {
+          "args": [
+            "in",
+            "power"
+          ],
+          "dest": "d",
+          "op": "div",
+          "type": "int"
+        },
+        {
+          "label": "l7"
+        },
+        {
+          "args": [
+            "d",
+            "zero"
+          ],
+          "dest": "check",
+          "op": "eq",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "check"
+          ],
+          "labels": [
+            "l8",
+            "l9"
+          ],
+          "op": "br"
+        },
+        {
+          "label": "l8"
+        },
+        {
+          "dest": "not_finished",
+          "op": "const",
+          "type": "bool",
+          "value": false
+        },
+        {
+          "labels": [
+            "l5"
+          ],
+          "op": "jmp"
+        },
+        {
+          "label": "l9"
+        },
+        {
+          "args": [
+            "index",
+            "one"
+          ],
+          "dest": "index",
+          "op": "add",
+          "type": "int"
+        },
+        {
+          "labels": [
+            "l5"
+          ],
+          "op": "jmp"
+        },
+        {
+          "label": "l10"
+        },
+        {
+          "args": [
+            "index",
+            "one"
+          ],
+          "dest": "exp",
+          "op": "sub",
+          "type": "int"
+        },
+        {
+          "label": "l11"
+        },
+        {
+          "args": [
+            "in",
+            "exp"
+          ],
+          "dest": "is_palindrome",
+          "funcs": [
+            "palindrome"
+          ],
+          "op": "call",
+          "type": "bool"
+        },
+        {
+          "label": "l12"
+        },
+        {
+          "args": [
+            "is_palindrome"
+          ],
+          "op": "print"
+        }
+      ],
+      "name": "main"
+    },
+    {
+      "args": [
+        {
+          "name": "base",
+          "type": "int"
+        },
+        {
+          "name": "exp",
+          "type": "int"
+        }
+      ],
+      "instrs": [
+        {
+          "label": "l0"
+        },
+        {
+          "dest": "res",
+          "op": "const",
+          "type": "int",
+          "value": 1
+        },
+        {
+          "label": "l1"
+        },
+        {
+          "dest": "zero",
+          "op": "const",
+          "type": "int",
+          "value": 0
+        },
+        {
+          "label": "l2"
+        },
+        {
+          "dest": "one",
+          "op": "const",
+          "type": "int",
+          "value": 1
+        },
+        {
+          "label": "l3"
+        },
+        {
+          "dest": "not_finished",
+          "op": "const",
+          "type": "bool",
+          "value": true
+        },
+        {
+          "args": [
+            "not_finished"
+          ],
+          "labels": [
+            "l4",
+            "l8"
+          ],
+          "op": "br"
+        },
+        {
+          "label": "l4"
+        },
+        {
+          "args": [
+            "exp",
+            "zero"
+          ],
+          "dest": "finished",
+          "op": "eq",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "finished"
+          ],
+          "labels": [
+            "l5",
+            "l6"
+          ],
+          "op": "br"
+        },
+        {
+          "label": "l5"
+        },
+        {
+          "dest": "not_finished",
+          "op": "const",
+          "type": "bool",
+          "value": false
+        },
+        {
+          "labels": [
+            "l4"
+          ],
+          "op": "jmp"
+        },
+        {
+          "label": "l6"
+        },
+        {
+          "args": [
+            "res",
+            "base"
+          ],
+          "dest": "res",
+          "op": "mul",
+          "type": "int"
+        },
+        {
+          "label": "l7"
+        },
+        {
+          "args": [
+            "exp",
+            "one"
+          ],
+          "dest": "exp",
+          "op": "sub",
+          "type": "int"
+        },
+        {
+          "labels": [
+            "l4"
+          ],
+          "op": "jmp"
+        },
+        {
+          "label": "l8"
+        },
+        {
+          "args": [
+            "res"
+          ],
+          "op": "ret"
+        }
+      ],
+      "name": "pow",
+      "type": "int"
+    },
+    {
+      "args": [
+        {
+          "name": "in",
+          "type": "int"
+        },
+        {
+          "name": "len",
+          "type": "int"
+        }
+      ],
+      "instrs": [
+        {
+          "label": "l0"
+        },
+        {
+          "dest": "is_palindrome",
+          "op": "const",
+          "type": "bool",
+          "value": false
+        },
+        {
+          "label": "l1"
+        },
+        {
+          "dest": "zero",
+          "op": "const",
+          "type": "int",
+          "value": 0
+        },
+        {
+          "label": "l2"
+        },
+        {
+          "dest": "two",
+          "op": "const",
+          "type": "int",
+          "value": 2
+        },
+        {
+          "label": "l3"
+        },
+        {
+          "dest": "ten",
+          "op": "const",
+          "type": "int",
+          "value": 10
+        },
+        {
+          "label": "l4"
+        },
+        {
+          "args": [
+            "len",
+            "zero"
+          ],
+          "dest": "check",
+          "op": "le",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "check"
+          ],
+          "labels": [
+            "l5",
+            "l6"
+          ],
+          "op": "br"
+        },
+        {
+          "label": "l5"
+        },
+        {
+          "dest": "is_palindrome",
+          "op": "const",
+          "type": "bool",
+          "value": true
+        },
+        {
+          "labels": [
+            "l19"
+          ],
+          "op": "jmp"
+        },
+        {
+          "label": "l6"
+        },
+        {
+          "args": [
+            "ten",
+            "len"
+          ],
+          "dest": "power",
+          "funcs": [
+            "pow"
+          ],
+          "op": "call",
+          "type": "int"
+        },
+        {
+          "label": "l7"
+        },
+        {
+          "args": [
+            "in",
+            "power"
+          ],
+          "dest": "left",
+          "op": "div",
+          "type": "int"
+        },
+        {
+          "label": "l8"
+        },
+        {
+          "args": [
+            "in",
+            "ten"
+          ],
+          "dest": "v1",
+          "op": "div",
+          "type": "int"
+        },
+        {
+          "label": "l9"
+        },
+        {
+          "args": [
+            "v1",
+            "ten"
+          ],
+          "dest": "v2",
+          "op": "mul",
+          "type": "int"
+        },
+        {
+          "label": "l10"
+        },
+        {
+          "args": [
+            "in",
+            "v2"
+          ],
+          "dest": "right",
+          "op": "sub",
+          "type": "int"
+        },
+        {
+          "label": "l11"
+        },
+        {
+          "args": [
+            "left",
+            "right"
+          ],
+          "dest": "is_equal",
+          "op": "eq",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "is_equal"
+          ],
+          "labels": [
+            "l12",
+            "l18"
+          ],
+          "op": "br"
+        },
+        {
+          "label": "l12"
+        },
+        {
+          "args": [
+            "power",
+            "left"
+          ],
+          "dest": "temp",
+          "op": "mul",
+          "type": "int"
+        },
+        {
+          "label": "l13"
+        },
+        {
+          "args": [
+            "in",
+            "temp"
+          ],
+          "dest": "temp",
+          "op": "sub",
+          "type": "int"
+        },
+        {
+          "label": "l14"
+        },
+        {
+          "args": [
+            "temp",
+            "right"
+          ],
+          "dest": "temp",
+          "op": "sub",
+          "type": "int"
+        },
+        {
+          "label": "l15"
+        },
+        {
+          "args": [
+            "temp",
+            "ten"
+          ],
+          "dest": "next_in",
+          "op": "div",
+          "type": "int"
+        },
+        {
+          "label": "l16"
+        },
+        {
+          "args": [
+            "len",
+            "two"
+          ],
+          "dest": "next_len",
+          "op": "sub",
+          "type": "int"
+        },
+        {
+          "label": "l17"
+        },
+        {
+          "args": [
+            "next_in",
+            "next_len"
+          ],
+          "dest": "is_palindrome",
+          "funcs": [
+            "palindrome"
+          ],
+          "op": "call",
+          "type": "bool"
+        },
+        {
+          "labels": [
+            "l19"
+          ],
+          "op": "jmp"
+        },
+        {
+          "label": "l18"
+        },
+        {
+          "dest": "is_palindrome",
+          "op": "const",
+          "type": "bool",
+          "value": false
+        },
+        {
+          "labels": [
+            "l19"
+          ],
+          "op": "jmp"
+        },
+        {
+          "label": "l19"
+        },
+        {
+          "args": [
+            "is_palindrome"
+          ],
+          "op": "ret"
+        }
+      ],
+      "name": "palindrome",
+      "type": "bool"
+    }
+  ]
+}

@@ -1,0 +1,194 @@
+{
+  "functions": [
+    {
+      "args": [
+        {
+          "name": "n",
+          "type": "int"
+        }
+      ],
+      "instrs": [
+        {
+          "label": "l0"
+        },
+        {
+          "dest": "one",
+          "op": "const",
+          "type": "int",
+          "value": 1
+        },
+        {
+          "label": "l1"
+        },
+        {
+          "args": [
+            "n",
+            "n"
+          ],
+          "dest": "n_sq",
+          "op": "mul",
+          "type": "int"
+        },
+        {
+          "label": "l2"
+        },
+        {
+          "args": [
+            "one"
+          ],
+          "dest": "a",
+          "op": "id",
+          "type": "int"
+        },
+        {
+          "label": "l3"
+        },
+        {
+          "args": [
+            "one"
+          ],
+          "dest": "b",
+          "op": "id",
+          "type": "int"
+        },
+        {
+          "label": "l4"
+        },
+        {
+          "args": [
+            "a",
+            "a"
+          ],
+          "dest": "a_sq",
+          "op": "mul",
+          "type": "int"
+        },
+        {
+          "label": "l5"
+        },
+        {
+          "args": [
+            "b",
+            "b"
+          ],
+          "dest": "b_sq",
+          "op": "mul",
+          "type": "int"
+        },
+        {
+          "label": "l6"
+        },
+        {
+          "args": [
+            "a_sq",
+            "b_sq"
+          ],
+          "dest": "sum",
+          "op": "add",
+          "type": "int"
+        },
+        {
+          "label": "l7"
+        },
+        {
+          "args": [
+            "sum",
+            "n_sq"
+          ],
+          "dest": "found",
+          "op": "eq",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "found"
+          ],
+          "labels": [
+            "l8",
+            "l9"
+          ],
+          "op": "br"
+        },
+        {
+          "label": "l8"
+        },
+        {
+          "args": [
+            "b",
+            "a"
+          ],
+          "op": "print"
+        },
+        {
+          "label": "l9"
+        },
+        {
+          "args": [
+            "b",
+            "one"
+          ],
+          "dest": "b",
+          "op": "add",
+          "type": "int"
+        },
+        {
+          "label": "l10"
+        },
+        {
+          "args": [
+            "b",
+            "a"
+          ],
+          "dest": "done",
+          "op": "ge",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "done"
+          ],
+          "labels": [
+            "l11",
+            "l4"
+          ],
+          "op": "br"
+        },
+        {
+          "label": "l11"
+        },
+        {
+          "args": [
+            "a",
+            "one"
+          ],
+          "dest": "a",
+          "op": "add",
+          "type": "int"
+        },
+        {
+          "label": "l12"
+        },
+        {
+          "args": [
+            "a",
+            "n"
+          ],
+          "dest": "done",
+          "op": "ge",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "done"
+          ],
+          "labels": [
+            "l13",
+            "l3"
+          ],
+          "op": "br"
+        }
+      ],
+      "name": "main"
+    }
+  ]
+}

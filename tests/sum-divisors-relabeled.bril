@@ -1,0 +1,58 @@
+# ARGS: 100;
+# Finds the sum of an integer input's positive divisors.;
+# Prints the divisors as they are found, followed by the sum.;
+@main(n: int) {
+.l0:
+  i   : int = const 0;
+.l1:
+  res : int = const 0;
+.l2:
+  one : int = const 1;
+.l3:
+  non : int = const -1;
+.l4:
+  zer : int = const 0;
+.l5:
+  nlz : bool = lt n zer;
+  br nlz .l6 .l7;
+.l6:
+  n : int = mul n non;
+.l7:
+  i    : int  = add i one;
+.l8:
+  isq  : int  = mul i i;
+.l9:
+  sqgt : bool = gt isq n;
+  br sqgt .l18 .l10;
+.l10:
+  m   : int  = call @mod n i;
+.l11:
+  eqz : bool = eq m zer;
+  br eqz .l12 .l7;
+.l12:
+  print i;
+.l13:
+  res  : int  = add res i;
+.l14:
+  d    : int  = div n i;
+.l15:
+  deqi : bool = eq d i;
+  br deqi .l7 .l16;
+.l16:
+  print d;
+.l17:
+  res : int = add res d;
+  jmp .l7;
+.l18:
+  print res;
+}
+@mod(dividend: int, divisor: int) : int {
+.l0:
+  quot: int = div dividend divisor;
+.l1:
+  prod: int = mul divisor quot;
+.l2:
+  diff: int = sub dividend prod;
+.l3:
+  ret diff;
+}

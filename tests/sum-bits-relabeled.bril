@@ -1,0 +1,33 @@
+# ARGS: 42;
+@main(input : int) {
+.l0:
+  sum : int = const 0;
+.l1:
+  two : int = const 2;
+.l2:
+  zero : int = const 0;
+.l3:
+  cond : bool = eq input zero;
+  br cond .l7 .l4;
+.l4:
+  bit : int = call @mod input two;
+.l5:
+  input : int = div input two;
+.l6:
+  sum : int = add sum bit;
+  jmp .l3;
+.l7:
+  print sum;
+}
+@mod(dividend : int, divisor : int) : int {
+.l0:
+  quotient : int = div dividend divisor;
+.l1:
+  two : int = const 2;
+.l2:
+  prod : int = mul two quotient;
+.l3:
+  diff : int = sub dividend prod;
+.l4:
+  ret diff;
+}

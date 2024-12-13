@@ -1,0 +1,682 @@
+{
+  "functions": [
+    {
+      "args": [
+        {
+          "name": "n",
+          "type": "int"
+        }
+      ],
+      "instrs": [
+        {
+          "label": "l0"
+        },
+        {
+          "dest": "v0",
+          "op": "const",
+          "type": "int",
+          "value": 0
+        },
+        {
+          "label": "l1"
+        },
+        {
+          "args": [
+            "v0"
+          ],
+          "dest": "res",
+          "op": "id",
+          "type": "int"
+        },
+        {
+          "label": "l2"
+        },
+        {
+          "dest": "v2",
+          "op": "const",
+          "type": "int",
+          "value": 1
+        },
+        {
+          "label": "l3"
+        },
+        {
+          "args": [
+            "v2"
+          ],
+          "dest": "i",
+          "op": "id",
+          "type": "int"
+        },
+        {
+          "label": "l4"
+        },
+        {
+          "args": [
+            "i"
+          ],
+          "dest": "v3",
+          "op": "id",
+          "type": "int"
+        },
+        {
+          "label": "l5"
+        },
+        {
+          "args": [
+            "n"
+          ],
+          "dest": "v4",
+          "op": "id",
+          "type": "int"
+        },
+        {
+          "label": "l6"
+        },
+        {
+          "args": [
+            "v3",
+            "v4"
+          ],
+          "dest": "v5",
+          "op": "le",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "v5"
+          ],
+          "labels": [
+            "l7",
+            "l15"
+          ],
+          "op": "br"
+        },
+        {
+          "label": "l7"
+        },
+        {
+          "args": [
+            "i"
+          ],
+          "dest": "v6",
+          "op": "id",
+          "type": "int"
+        },
+        {
+          "label": "l8"
+        },
+        {
+          "args": [
+            "i"
+          ],
+          "dest": "v7",
+          "op": "id",
+          "type": "int"
+        },
+        {
+          "label": "l9"
+        },
+        {
+          "args": [
+            "v6",
+            "v7"
+          ],
+          "dest": "v8",
+          "op": "mul",
+          "type": "int"
+        },
+        {
+          "label": "l10"
+        },
+        {
+          "args": [
+            "v8"
+          ],
+          "dest": "sq",
+          "op": "id",
+          "type": "int"
+        },
+        {
+          "label": "l11"
+        },
+        {
+          "args": [
+            "res"
+          ],
+          "dest": "v9",
+          "op": "id",
+          "type": "int"
+        },
+        {
+          "label": "l12"
+        },
+        {
+          "args": [
+            "sq"
+          ],
+          "dest": "v10",
+          "op": "id",
+          "type": "int"
+        },
+        {
+          "label": "l13"
+        },
+        {
+          "args": [
+            "v9",
+            "v10"
+          ],
+          "dest": "v11",
+          "op": "add",
+          "type": "int"
+        },
+        {
+          "label": "l14"
+        },
+        {
+          "args": [
+            "v11"
+          ],
+          "dest": "res",
+          "op": "id",
+          "type": "int"
+        },
+        {
+          "label": "l15"
+        },
+        {
+          "args": [
+            "i"
+          ],
+          "dest": "v12",
+          "op": "id",
+          "type": "int"
+        },
+        {
+          "label": "l16"
+        },
+        {
+          "dest": "v13",
+          "op": "const",
+          "type": "int",
+          "value": 1
+        },
+        {
+          "label": "l17"
+        },
+        {
+          "args": [
+            "v12",
+            "v13"
+          ],
+          "dest": "v14",
+          "op": "add",
+          "type": "int"
+        },
+        {
+          "label": "l18"
+        },
+        {
+          "args": [
+            "v14"
+          ],
+          "dest": "i",
+          "op": "id",
+          "type": "int"
+        },
+        {
+          "labels": [
+            "l4"
+          ],
+          "op": "jmp"
+        },
+        {
+          "label": "l19"
+        },
+        {
+          "args": [
+            "res"
+          ],
+          "dest": "v15",
+          "op": "id",
+          "type": "int"
+        },
+        {
+          "label": "l20"
+        },
+        {
+          "args": [
+            "v15"
+          ],
+          "op": "ret"
+        }
+      ],
+      "name": "sumOfSquares",
+      "type": "int"
+    },
+    {
+      "args": [
+        {
+          "name": "n",
+          "type": "int"
+        }
+      ],
+      "instrs": [
+        {
+          "label": "l0"
+        },
+        {
+          "dest": "v0",
+          "op": "const",
+          "type": "int",
+          "value": 0
+        },
+        {
+          "label": "l1"
+        },
+        {
+          "args": [
+            "v0"
+          ],
+          "dest": "res",
+          "op": "id",
+          "type": "int"
+        },
+        {
+          "label": "l2"
+        },
+        {
+          "dest": "v2",
+          "op": "const",
+          "type": "int",
+          "value": 1
+        },
+        {
+          "label": "l3"
+        },
+        {
+          "args": [
+            "v2"
+          ],
+          "dest": "i",
+          "op": "id",
+          "type": "int"
+        },
+        {
+          "label": "l4"
+        },
+        {
+          "args": [
+            "i"
+          ],
+          "dest": "v3",
+          "op": "id",
+          "type": "int"
+        },
+        {
+          "label": "l5"
+        },
+        {
+          "args": [
+            "n"
+          ],
+          "dest": "v4",
+          "op": "id",
+          "type": "int"
+        },
+        {
+          "label": "l6"
+        },
+        {
+          "args": [
+            "v3",
+            "v4"
+          ],
+          "dest": "v5",
+          "op": "le",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "v5"
+          ],
+          "labels": [
+            "l7",
+            "l19"
+          ],
+          "op": "br"
+        },
+        {
+          "label": "l7"
+        },
+        {
+          "args": [
+            "res"
+          ],
+          "dest": "v6",
+          "op": "id",
+          "type": "int"
+        },
+        {
+          "label": "l8"
+        },
+        {
+          "args": [
+            "i"
+          ],
+          "dest": "v7",
+          "op": "id",
+          "type": "int"
+        },
+        {
+          "label": "l9"
+        },
+        {
+          "args": [
+            "v6",
+            "v7"
+          ],
+          "dest": "v8",
+          "op": "add",
+          "type": "int"
+        },
+        {
+          "label": "l10"
+        },
+        {
+          "args": [
+            "v8"
+          ],
+          "dest": "res",
+          "op": "id",
+          "type": "int"
+        },
+        {
+          "label": "l11"
+        },
+        {
+          "args": [
+            "i"
+          ],
+          "dest": "v9",
+          "op": "id",
+          "type": "int"
+        },
+        {
+          "label": "l12"
+        },
+        {
+          "dest": "v10",
+          "op": "const",
+          "type": "int",
+          "value": 1
+        },
+        {
+          "label": "l13"
+        },
+        {
+          "args": [
+            "v9",
+            "v10"
+          ],
+          "dest": "v11",
+          "op": "add",
+          "type": "int"
+        },
+        {
+          "label": "l14"
+        },
+        {
+          "args": [
+            "v11"
+          ],
+          "dest": "i",
+          "op": "id",
+          "type": "int"
+        },
+        {
+          "labels": [
+            "l4"
+          ],
+          "op": "jmp"
+        },
+        {
+          "label": "l15"
+        },
+        {
+          "args": [
+            "res"
+          ],
+          "dest": "v12",
+          "op": "id",
+          "type": "int"
+        },
+        {
+          "label": "l16"
+        },
+        {
+          "args": [
+            "res"
+          ],
+          "dest": "v13",
+          "op": "id",
+          "type": "int"
+        },
+        {
+          "label": "l17"
+        },
+        {
+          "args": [
+            "v12",
+            "v13"
+          ],
+          "dest": "v14",
+          "op": "mul",
+          "type": "int"
+        },
+        {
+          "label": "l18"
+        },
+        {
+          "args": [
+            "v14"
+          ],
+          "dest": "square",
+          "op": "id",
+          "type": "int"
+        },
+        {
+          "label": "l19"
+        },
+        {
+          "args": [
+            "square"
+          ],
+          "dest": "v15",
+          "op": "id",
+          "type": "int"
+        },
+        {
+          "label": "l20"
+        },
+        {
+          "args": [
+            "v15"
+          ],
+          "op": "ret"
+        }
+      ],
+      "name": "squareOfSum",
+      "type": "int"
+    },
+    {
+      "args": [
+        {
+          "name": "n",
+          "type": "int"
+        }
+      ],
+      "instrs": [
+        {
+          "label": "l0"
+        },
+        {
+          "args": [
+            "n"
+          ],
+          "dest": "v0",
+          "op": "id",
+          "type": "int"
+        },
+        {
+          "label": "l1"
+        },
+        {
+          "args": [
+            "v0"
+          ],
+          "dest": "sum",
+          "funcs": [
+            "sumOfSquares"
+          ],
+          "op": "call",
+          "type": "int"
+        },
+        {
+          "label": "l2"
+        },
+        {
+          "args": [
+            "sum"
+          ],
+          "dest": "sum",
+          "op": "id",
+          "type": "int"
+        },
+        {
+          "label": "l3"
+        },
+        {
+          "args": [
+            "n"
+          ],
+          "dest": "v1",
+          "op": "id",
+          "type": "int"
+        },
+        {
+          "label": "l4"
+        },
+        {
+          "args": [
+            "v1"
+          ],
+          "dest": "square",
+          "funcs": [
+            "squareOfSum"
+          ],
+          "op": "call",
+          "type": "int"
+        },
+        {
+          "label": "l5"
+        },
+        {
+          "args": [
+            "square"
+          ],
+          "dest": "square",
+          "op": "id",
+          "type": "int"
+        },
+        {
+          "label": "l6"
+        },
+        {
+          "args": [
+            "square"
+          ],
+          "dest": "v2",
+          "op": "id",
+          "type": "int"
+        },
+        {
+          "label": "l7"
+        },
+        {
+          "args": [
+            "sum"
+          ],
+          "dest": "v3",
+          "op": "id",
+          "type": "int"
+        },
+        {
+          "label": "l8"
+        },
+        {
+          "args": [
+            "v2",
+            "v3"
+          ],
+          "dest": "v4",
+          "op": "sub",
+          "type": "int"
+        },
+        {
+          "label": "l9"
+        },
+        {
+          "args": [
+            "v4"
+          ],
+          "dest": "diff",
+          "op": "id",
+          "type": "int"
+        },
+        {
+          "label": "l10"
+        },
+        {
+          "args": [
+            "diff"
+          ],
+          "dest": "v5",
+          "op": "id",
+          "type": "int"
+        },
+        {
+          "label": "l11"
+        },
+        {
+          "args": [
+            "v5"
+          ],
+          "op": "print"
+        },
+        {
+          "label": "l12"
+        },
+        {
+          "dest": "v6",
+          "op": "const",
+          "type": "int",
+          "value": 0
+        },
+        {
+          "label": "l13"
+        },
+        {
+          "args": [
+            "diff"
+          ],
+          "dest": "v7",
+          "op": "id",
+          "type": "int"
+        }
+      ],
+      "name": "main"
+    }
+  ]
+}

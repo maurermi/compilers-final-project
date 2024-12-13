@@ -1,0 +1,152 @@
+{
+  "functions": [
+    {
+      "args": [
+        {
+          "name": "n",
+          "type": "int"
+        }
+      ],
+      "instrs": [
+        {
+          "label": "l0"
+        },
+        {
+          "args": [
+            "n"
+          ],
+          "dest": "n",
+          "op": "id",
+          "type": "int"
+        },
+        {
+          "label": "l1"
+        },
+        {
+          "dest": "z",
+          "op": "const",
+          "type": "int",
+          "value": 10
+        },
+        {
+          "label": "l2"
+        },
+        {
+          "dest": "x",
+          "op": "const",
+          "type": "int",
+          "value": 0
+        },
+        {
+          "label": "l3"
+        },
+        {
+          "dest": "y",
+          "op": "const",
+          "type": "int",
+          "value": 1
+        },
+        {
+          "label": "l4"
+        },
+        {
+          "dest": "two",
+          "op": "const",
+          "type": "int",
+          "value": 2
+        },
+        {
+          "label": "l5"
+        },
+        {
+          "dest": "one",
+          "op": "const",
+          "type": "int",
+          "value": 1
+        },
+        {
+          "label": "l6"
+        },
+        {
+          "args": [
+            "x",
+            "n"
+          ],
+          "dest": "b",
+          "op": "lt",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "b"
+          ],
+          "labels": [
+            "l7",
+            "l11"
+          ],
+          "op": "br"
+        },
+        {
+          "label": "l7"
+        },
+        {
+          "args": [
+            "x",
+            "two"
+          ],
+          "dest": "z",
+          "op": "mul"
+        },
+        {
+          "label": "l8"
+        },
+        {
+          "args": [
+            "z",
+            "y"
+          ],
+          "dest": "z",
+          "op": "add"
+        },
+        {
+          "label": "l9"
+        },
+        {
+          "args": [
+            "x",
+            "one"
+          ],
+          "dest": "x",
+          "op": "add"
+        },
+        {
+          "label": "l10"
+        },
+        {
+          "args": [
+            "x",
+            "z"
+          ],
+          "dest": "y",
+          "op": "add"
+        },
+        {
+          "labels": [
+            "l6"
+          ],
+          "op": "jmp"
+        },
+        {
+          "label": "l11"
+        },
+        {
+          "args": [
+            "y"
+          ],
+          "op": "ret"
+        }
+      ],
+      "name": "main"
+    }
+  ]
+}

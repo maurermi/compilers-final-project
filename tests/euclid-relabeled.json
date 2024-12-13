@@ -1,0 +1,562 @@
+{
+  "functions": [
+    {
+      "instrs": [
+        {
+          "label": "l0"
+        },
+        {
+          "dest": "v0",
+          "op": "const",
+          "type": "int",
+          "value": 23789216
+        },
+        {
+          "label": "l1"
+        },
+        {
+          "args": [
+            "v0"
+          ],
+          "dest": "x",
+          "op": "id",
+          "type": "int"
+        },
+        {
+          "label": "l2"
+        },
+        {
+          "dest": "v1",
+          "op": "const",
+          "type": "int",
+          "value": 1748698766
+        },
+        {
+          "label": "l3"
+        },
+        {
+          "args": [
+            "v1"
+          ],
+          "dest": "y",
+          "op": "id",
+          "type": "int"
+        },
+        {
+          "label": "l4"
+        },
+        {
+          "args": [
+            "x"
+          ],
+          "dest": "v2",
+          "op": "id",
+          "type": "int"
+        },
+        {
+          "label": "l5"
+        },
+        {
+          "args": [
+            "y"
+          ],
+          "dest": "v3",
+          "op": "id",
+          "type": "int"
+        },
+        {
+          "label": "l6"
+        },
+        {
+          "args": [
+            "v2",
+            "v3"
+          ],
+          "dest": "f",
+          "funcs": [
+            "gcd"
+          ],
+          "op": "call",
+          "type": "int"
+        },
+        {
+          "label": "l7"
+        },
+        {
+          "args": [
+            "f"
+          ],
+          "dest": "f",
+          "op": "id",
+          "type": "int"
+        },
+        {
+          "label": "l8"
+        },
+        {
+          "args": [
+            "f"
+          ],
+          "dest": "v4",
+          "op": "id",
+          "type": "int"
+        },
+        {
+          "label": "l9"
+        },
+        {
+          "args": [
+            "v4"
+          ],
+          "op": "print"
+        },
+        {
+          "label": "l10"
+        },
+        {
+          "dest": "v5",
+          "op": "const",
+          "type": "int",
+          "value": 0
+        }
+      ],
+      "name": "main"
+    },
+    {
+      "args": [
+        {
+          "name": "r",
+          "type": "int"
+        },
+        {
+          "name": "s",
+          "type": "int"
+        }
+      ],
+      "instrs": [
+        {
+          "label": "l0"
+        },
+        {
+          "args": [
+            "r"
+          ],
+          "dest": "v0",
+          "op": "id",
+          "type": "int"
+        },
+        {
+          "label": "l1"
+        },
+        {
+          "args": [
+            "r"
+          ],
+          "dest": "v1",
+          "op": "id",
+          "type": "int"
+        },
+        {
+          "label": "l2"
+        },
+        {
+          "args": [
+            "s"
+          ],
+          "dest": "v2",
+          "op": "id",
+          "type": "int"
+        },
+        {
+          "label": "l3"
+        },
+        {
+          "args": [
+            "v1",
+            "v2"
+          ],
+          "dest": "v3",
+          "op": "div",
+          "type": "int"
+        },
+        {
+          "label": "l4"
+        },
+        {
+          "args": [
+            "s"
+          ],
+          "dest": "v4",
+          "op": "id",
+          "type": "int"
+        },
+        {
+          "label": "l5"
+        },
+        {
+          "args": [
+            "v3",
+            "v4"
+          ],
+          "dest": "v5",
+          "op": "mul",
+          "type": "int"
+        },
+        {
+          "label": "l6"
+        },
+        {
+          "args": [
+            "v0",
+            "v5"
+          ],
+          "dest": "v6",
+          "op": "sub",
+          "type": "int"
+        },
+        {
+          "label": "l7"
+        },
+        {
+          "args": [
+            "v6"
+          ],
+          "dest": "result",
+          "op": "id",
+          "type": "int"
+        },
+        {
+          "label": "l8"
+        },
+        {
+          "args": [
+            "result"
+          ],
+          "dest": "v7",
+          "op": "id",
+          "type": "int"
+        },
+        {
+          "label": "l9"
+        },
+        {
+          "args": [
+            "v7"
+          ],
+          "op": "ret"
+        }
+      ],
+      "name": "mod",
+      "type": "int"
+    },
+    {
+      "args": [
+        {
+          "name": "a",
+          "type": "int"
+        },
+        {
+          "name": "b",
+          "type": "int"
+        }
+      ],
+      "instrs": [
+        {
+          "label": "l0"
+        },
+        {
+          "dest": "v0",
+          "op": "const",
+          "type": "int",
+          "value": 0
+        },
+        {
+          "label": "l1"
+        },
+        {
+          "args": [
+            "v0"
+          ],
+          "dest": "zero",
+          "op": "id",
+          "type": "int"
+        },
+        {
+          "label": "l2"
+        },
+        {
+          "args": [
+            "b"
+          ],
+          "dest": "v1",
+          "op": "id",
+          "type": "int"
+        },
+        {
+          "label": "l3"
+        },
+        {
+          "args": [
+            "zero"
+          ],
+          "dest": "v2",
+          "op": "id",
+          "type": "int"
+        },
+        {
+          "label": "l4"
+        },
+        {
+          "args": [
+            "v1",
+            "v2"
+          ],
+          "dest": "v3",
+          "op": "eq",
+          "type": "bool"
+        },
+        {
+          "label": "l5"
+        },
+        {
+          "args": [
+            "v3"
+          ],
+          "dest": "cond_temp",
+          "op": "id",
+          "type": "bool"
+        },
+        {
+          "label": "l6"
+        },
+        {
+          "args": [
+            "cond_temp"
+          ],
+          "dest": "v4",
+          "op": "not",
+          "type": "bool"
+        },
+        {
+          "label": "l7"
+        },
+        {
+          "args": [
+            "v4"
+          ],
+          "dest": "cond",
+          "op": "id",
+          "type": "bool"
+        },
+        {
+          "label": "l8"
+        },
+        {
+          "args": [
+            "cond"
+          ],
+          "dest": "v6",
+          "op": "id",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "v6"
+          ],
+          "labels": [
+            "l9",
+            "l23"
+          ],
+          "op": "br"
+        },
+        {
+          "label": "l9"
+        },
+        {
+          "args": [
+            "b"
+          ],
+          "dest": "v7",
+          "op": "id",
+          "type": "int"
+        },
+        {
+          "label": "l10"
+        },
+        {
+          "args": [
+            "v7"
+          ],
+          "dest": "temp",
+          "op": "id",
+          "type": "int"
+        },
+        {
+          "label": "l11"
+        },
+        {
+          "args": [
+            "a"
+          ],
+          "dest": "v8",
+          "op": "id",
+          "type": "int"
+        },
+        {
+          "label": "l12"
+        },
+        {
+          "args": [
+            "b"
+          ],
+          "dest": "v9",
+          "op": "id",
+          "type": "int"
+        },
+        {
+          "label": "l13"
+        },
+        {
+          "args": [
+            "v8",
+            "v9"
+          ],
+          "dest": "v10",
+          "funcs": [
+            "mod"
+          ],
+          "op": "call",
+          "type": "int"
+        },
+        {
+          "label": "l14"
+        },
+        {
+          "args": [
+            "v10"
+          ],
+          "dest": "b",
+          "op": "id",
+          "type": "int"
+        },
+        {
+          "label": "l15"
+        },
+        {
+          "args": [
+            "temp"
+          ],
+          "dest": "v11",
+          "op": "id",
+          "type": "int"
+        },
+        {
+          "label": "l16"
+        },
+        {
+          "args": [
+            "v11"
+          ],
+          "dest": "a",
+          "op": "id",
+          "type": "int"
+        },
+        {
+          "label": "l17"
+        },
+        {
+          "args": [
+            "b"
+          ],
+          "dest": "v12",
+          "op": "id",
+          "type": "int"
+        },
+        {
+          "label": "l18"
+        },
+        {
+          "args": [
+            "zero"
+          ],
+          "dest": "v13",
+          "op": "id",
+          "type": "int"
+        },
+        {
+          "label": "l19"
+        },
+        {
+          "args": [
+            "v12",
+            "v13"
+          ],
+          "dest": "v14",
+          "op": "eq",
+          "type": "bool"
+        },
+        {
+          "label": "l20"
+        },
+        {
+          "args": [
+            "v14"
+          ],
+          "dest": "cond_temp",
+          "op": "id",
+          "type": "bool"
+        },
+        {
+          "label": "l21"
+        },
+        {
+          "args": [
+            "cond_temp"
+          ],
+          "dest": "v15",
+          "op": "not",
+          "type": "bool"
+        },
+        {
+          "label": "l22"
+        },
+        {
+          "args": [
+            "v15"
+          ],
+          "dest": "cond",
+          "op": "id",
+          "type": "bool"
+        },
+        {
+          "labels": [
+            "l8"
+          ],
+          "op": "jmp"
+        },
+        {
+          "label": "l23"
+        },
+        {
+          "args": [
+            "a"
+          ],
+          "dest": "v16",
+          "op": "id",
+          "type": "int"
+        },
+        {
+          "label": "l24"
+        },
+        {
+          "args": [
+            "v16"
+          ],
+          "op": "ret"
+        }
+      ],
+      "name": "gcd",
+      "type": "int"
+    }
+  ]
+}

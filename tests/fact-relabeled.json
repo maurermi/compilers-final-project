@@ -1,0 +1,197 @@
+{
+  "functions": [
+    {
+      "args": [
+        {
+          "name": "a",
+          "type": "int"
+        }
+      ],
+      "instrs": [
+        {
+          "label": "l0"
+        },
+        {
+          "args": [
+            "a"
+          ],
+          "dest": "x",
+          "funcs": [
+            "fact"
+          ],
+          "op": "call",
+          "type": "int"
+        },
+        {
+          "label": "l1"
+        },
+        {
+          "args": [
+            "x"
+          ],
+          "op": "print"
+        },
+        {
+          "label": "l2"
+        },
+        {
+          "dest": "v13",
+          "op": "const",
+          "type": "int",
+          "value": 0
+        }
+      ],
+      "name": "main"
+    },
+    {
+      "args": [
+        {
+          "name": "a",
+          "type": "int"
+        }
+      ],
+      "instrs": [
+        {
+          "label": "l0"
+        },
+        {
+          "args": [
+            "a"
+          ],
+          "dest": "v1",
+          "op": "id",
+          "type": "int"
+        },
+        {
+          "label": "l1"
+        },
+        {
+          "dest": "v2",
+          "op": "const",
+          "type": "int",
+          "value": 0
+        },
+        {
+          "label": "l2"
+        },
+        {
+          "args": [
+            "v1",
+            "v2"
+          ],
+          "dest": "v3",
+          "op": "eq",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "v3"
+          ],
+          "labels": [
+            "l3",
+            "l4"
+          ],
+          "op": "br"
+        },
+        {
+          "label": "l3"
+        },
+        {
+          "dest": "v4",
+          "op": "const",
+          "type": "int",
+          "value": 1
+        },
+        {
+          "label": "l4"
+        },
+        {
+          "args": [
+            "v4"
+          ],
+          "op": "ret"
+        },
+        {
+          "label": "l5"
+        },
+        {
+          "args": [
+            "a"
+          ],
+          "dest": "v5",
+          "op": "id",
+          "type": "int"
+        },
+        {
+          "label": "l6"
+        },
+        {
+          "args": [
+            "a"
+          ],
+          "dest": "v6",
+          "op": "id",
+          "type": "int"
+        },
+        {
+          "label": "l7"
+        },
+        {
+          "dest": "v7",
+          "op": "const",
+          "type": "int",
+          "value": 1
+        },
+        {
+          "label": "l8"
+        },
+        {
+          "args": [
+            "v6",
+            "v7"
+          ],
+          "dest": "v8",
+          "op": "sub",
+          "type": "int"
+        },
+        {
+          "label": "l9"
+        },
+        {
+          "args": [
+            "v8"
+          ],
+          "dest": "v9",
+          "funcs": [
+            "fact"
+          ],
+          "op": "call",
+          "type": "int"
+        },
+        {
+          "label": "l10"
+        },
+        {
+          "args": [
+            "v5",
+            "v9"
+          ],
+          "dest": "v10",
+          "op": "mul",
+          "type": "int"
+        },
+        {
+          "label": "l11"
+        },
+        {
+          "args": [
+            "v10"
+          ],
+          "op": "ret"
+        }
+      ],
+      "name": "fact",
+      "type": "int"
+    }
+  ]
+}

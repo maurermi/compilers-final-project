@@ -1,0 +1,167 @@
+{
+  "functions": [
+    {
+      "args": [
+        {
+          "name": "num",
+          "type": "int"
+        }
+      ],
+      "instrs": [
+        {
+          "label": "l0"
+        },
+        {
+          "dest": "zer",
+          "op": "const",
+          "type": "int",
+          "value": 0
+        },
+        {
+          "label": "l1"
+        },
+        {
+          "dest": "one",
+          "op": "const",
+          "type": "int",
+          "value": 1
+        },
+        {
+          "label": "l2"
+        },
+        {
+          "dest": "fac",
+          "op": "const",
+          "type": "int",
+          "value": 2
+        },
+        {
+          "label": "l3"
+        },
+        {
+          "args": [
+            "one",
+            "num"
+          ],
+          "dest": "ispos",
+          "op": "lt",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "ispos"
+          ],
+          "labels": [
+            "l4",
+            "l11"
+          ],
+          "op": "br"
+        },
+        {
+          "label": "l4"
+        },
+        {
+          "args": [
+            "num",
+            "fac"
+          ],
+          "dest": "quo",
+          "op": "div",
+          "type": "int"
+        },
+        {
+          "label": "l5"
+        },
+        {
+          "args": [
+            "quo",
+            "fac"
+          ],
+          "dest": "tmp",
+          "op": "mul",
+          "type": "int"
+        },
+        {
+          "label": "l6"
+        },
+        {
+          "args": [
+            "num",
+            "tmp"
+          ],
+          "dest": "mod",
+          "op": "sub",
+          "type": "int"
+        },
+        {
+          "label": "l7"
+        },
+        {
+          "args": [
+            "mod",
+            "zer"
+          ],
+          "dest": "iszero",
+          "op": "eq",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "iszero"
+          ],
+          "labels": [
+            "l8",
+            "l10"
+          ],
+          "op": "br"
+        },
+        {
+          "label": "l8"
+        },
+        {
+          "args": [
+            "fac"
+          ],
+          "op": "print"
+        },
+        {
+          "label": "l9"
+        },
+        {
+          "args": [
+            "num",
+            "fac"
+          ],
+          "dest": "num",
+          "op": "div",
+          "type": "int"
+        },
+        {
+          "labels": [
+            "l3"
+          ],
+          "op": "jmp"
+        },
+        {
+          "label": "l10"
+        },
+        {
+          "args": [
+            "fac",
+            "one"
+          ],
+          "dest": "fac",
+          "op": "add",
+          "type": "int"
+        },
+        {
+          "labels": [
+            "l3"
+          ],
+          "op": "jmp"
+        }
+      ],
+      "name": "main"
+    }
+  ]
+}

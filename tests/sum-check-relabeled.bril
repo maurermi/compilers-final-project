@@ -1,0 +1,50 @@
+# compute the sum of [1, n] by both loop and formula;
+# and compare them to see if the result is the same;
+# ARGS: 1000;
+@main(n: int) {
+.l0:
+  first: int = call @sum_by_loop n;
+.l1:
+  second: int = call @sum_by_formula n;
+.l2:
+  isSame: bool = eq first second;
+.l3:
+  print first;
+.l4:
+  print second;
+.l5:
+  print isSame;
+}
+@sum_by_loop(n: int): int {
+.l0:
+  one: int = const 1;
+.l1:
+  sum: int = const 0;
+.l2:
+  i: int = const 1;
+.l3:
+  con: bool = le i n;
+  br con .l4 .l6;
+.l4:
+  sum: int = add sum i;
+.l5:
+  i: int = add i one;
+  jmp .l3;
+.l6:
+  ret sum;
+}
+# sum = (1 + n) * n / 2;
+@sum_by_formula(n: int): int {
+.l0:
+  one: int = const 1;
+.l1:
+  two: int = const 2;
+.l2:
+  n_1: int = add one n;
+.l3:
+  multi: int = mul n_1 n;
+.l4:
+  sum: int = div multi two;
+.l5:
+  ret sum;
+}

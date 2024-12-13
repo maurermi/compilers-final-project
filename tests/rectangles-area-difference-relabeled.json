@@ -1,0 +1,167 @@
+{
+  "functions": [
+    {
+      "args": [
+        {
+          "name": "x1",
+          "type": "int"
+        },
+        {
+          "name": "y1",
+          "type": "int"
+        },
+        {
+          "name": "x2",
+          "type": "int"
+        },
+        {
+          "name": "y2",
+          "type": "int"
+        }
+      ],
+      "instrs": [
+        {
+          "label": "l0"
+        },
+        {
+          "args": [
+            "x1",
+            "y1"
+          ],
+          "dest": "a1",
+          "funcs": [
+            "area"
+          ],
+          "op": "call",
+          "type": "int"
+        },
+        {
+          "label": "l1"
+        },
+        {
+          "args": [
+            "x2",
+            "y2"
+          ],
+          "dest": "a2",
+          "funcs": [
+            "area"
+          ],
+          "op": "call",
+          "type": "int"
+        },
+        {
+          "label": "l2"
+        },
+        {
+          "args": [
+            "a1",
+            "a2"
+          ],
+          "dest": "res",
+          "op": "sub",
+          "type": "int"
+        },
+        {
+          "label": "l3"
+        },
+        {
+          "args": [
+            "a1",
+            "a2"
+          ],
+          "dest": "a1_bigger",
+          "op": "gt",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "a1_bigger"
+          ],
+          "labels": [
+            "l6",
+            "l4"
+          ],
+          "op": "br"
+        },
+        {
+          "label": "l4"
+        },
+        {
+          "dest": "neg1",
+          "op": "const",
+          "type": "int",
+          "value": -1
+        },
+        {
+          "label": "l5"
+        },
+        {
+          "args": [
+            "res",
+            "neg1"
+          ],
+          "dest": "res",
+          "op": "mul",
+          "type": "int"
+        },
+        {
+          "label": "l6"
+        },
+        {
+          "args": [
+            "res"
+          ],
+          "op": "print"
+        }
+      ],
+      "name": "main"
+    },
+    {
+      "args": [
+        {
+          "name": "x",
+          "type": "int"
+        },
+        {
+          "name": "y",
+          "type": "int"
+        }
+      ],
+      "instrs": [
+        {
+          "label": "l0"
+        },
+        {
+          "args": [
+            "x",
+            "y"
+          ],
+          "dest": "area",
+          "op": "mul",
+          "type": "int"
+        },
+        {
+          "label": "l1"
+        },
+        {
+          "args": [
+            "area"
+          ],
+          "op": "print"
+        },
+        {
+          "label": "l2"
+        },
+        {
+          "args": [
+            "area"
+          ],
+          "op": "ret"
+        }
+      ],
+      "name": "area",
+      "type": "int"
+    }
+  ]
+}

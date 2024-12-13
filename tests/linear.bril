@@ -1,0 +1,35 @@
+# ARGS: 10
+# Compute the 10th element in the catalan sequence, which is given by:
+#   c0 = 0; c(n+1) = sum(ci * c(n-i) for i = 0..n)
+@main() {
+.l1: 
+  n: int = const 10;
+.l2:
+  one: int = const 1;
+.l3:
+  a: int = const 1;
+.l4:
+  b: int = add n one;
+.l5:
+  n: int = const 50;
+.l6:
+  n: bool = gt b a;
+.if:
+  b = id a;
+.l9:
+  a: bool = gt b a;
+.if2:
+  one = sub b a;
+.else2:
+  n = mul b a;
+.then:
+  a: int = add a b;
+.l12:
+  n: int = add a a;
+.l13:
+  b: int = add a b;
+.l14:
+  b: int = add b b;
+.l15:
+  ret b;
+}

@@ -1,0 +1,43 @@
+# ARGS: 8;
+@main(input: int) {
+.l0:
+  value: int = id input;
+.l1:
+  v1: int = const 1;
+.l2:
+  result: int = id v1;
+.l3:
+  v3: int = id value;
+.l4:
+  i: int = id v3;
+.l5:
+  v4: int = id i;
+.l6:
+  v5: int = const 0;
+.l7:
+  v6: bool = gt v4 v5;
+  br v6 .l8 .l16;
+.l8:
+  v7: int = id result;
+.l9:
+  v8: int = id i;
+.l10:
+  v9: int = mul v7 v8;
+.l11:
+  result: int = id v9;
+.l12:
+  v10: int = id i;
+.l13:
+  v11: int = const 1;
+.l14:
+  v12: int = sub v10 v11;
+.l15:
+  i: int = id v12;
+  jmp .l5;
+.l16:
+  v13: int = id result;
+.l17:
+  print v13;
+.l18:
+  v14: int = const 0;
+}

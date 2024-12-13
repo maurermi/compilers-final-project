@@ -1,0 +1,100 @@
+@main {
+.l0:
+  v0: int = const 23789216;
+.l1:
+  x: int = id v0;
+.l2:
+  v1: int = const 1748698766;
+.l3:
+  y: int = id v1;
+.l4:
+  v2: int = id x;
+.l5:
+  v3: int = id y;
+.l6:
+  f: int = call @gcd v2 v3;
+.l7:
+  f: int = id f;
+.l8:
+  v4: int = id f;
+.l9:
+  print v4;
+.l10:
+  v5: int = const 0;
+}
+@mod(r: int, s: int): int {
+.l0:
+  v0: int = id r;
+.l1:
+  v1: int = id r;
+.l2:
+  v2: int = id s;
+.l3:
+  v3: int = div v1 v2;
+.l4:
+  v4: int = id s;
+.l5:
+  v5: int = mul v3 v4;
+.l6:
+  v6: int = sub v0 v5;
+.l7:
+  result: int = id v6;
+.l8:
+  v7: int = id result;
+.l9:
+  ret v7;
+}
+@gcd(a: int, b: int): int {
+.l0:
+  v0: int = const 0;
+.l1:
+  zero: int = id v0;
+.l2:
+  v1: int = id b;
+.l3:
+  v2: int = id zero;
+.l4:
+  v3: bool = eq v1 v2;
+.l5:
+  cond_temp: bool = id v3;
+.l6:
+  v4: bool = not cond_temp;
+.l7:
+  cond: bool = id v4;
+.l8:
+  v6: bool = id cond;
+  br v6 .l9 .l23;
+.l9:
+  v7: int = id b;
+.l10:
+  temp: int = id v7;
+.l11:
+  v8: int = id a;
+.l12:
+  v9: int = id b;
+.l13:
+  v10: int = call @mod v8 v9;
+.l14:
+  b: int = id v10;
+.l15:
+  v11: int = id temp;
+.l16:
+  a: int = id v11;
+.l17:
+  v12: int = id b;
+.l18:
+  v13: int = id zero;
+.l19:
+  v14: bool = eq v12 v13;
+.l20:
+  cond_temp: bool = id v14;
+.l21:
+  v15: bool = not cond_temp;
+.l22:
+  cond: bool = id v15;
+  jmp .l8;
+.l23:
+  v16: int = id a;
+.l24:
+  ret v16;
+}

@@ -1,0 +1,128 @@
+# ARGS: -5 8 21;
+@main(a: int, b: int, c: int) {
+.l0:
+  call @quadratic a b c;
+}
+@sqrt(x: int): int {
+.l0:
+  v1: int = const 1;
+.l1:
+  i: int = id v1;
+.l2:
+  v2: int = id i;
+.l3:
+  v3: int = id x;
+.l4:
+  v4: int = const 1;
+.l5:
+  v5: int = sub v3 v4;
+.l6:
+  v6: bool = lt v2 v5;
+  br v6 .l7 .l17;
+.l7:
+  v8: int = id i;
+.l8:
+  v9: int = id i;
+.l9:
+  v10: int = mul v8 v9;
+.l10:
+  v11: int = id x;
+.l11:
+  v12: bool = ge v10 v11;
+  br v12 .l12 .l13;
+.l12:
+  v13: int = id i;
+.l13:
+  ret v13;
+.l14:
+  v14: int = id i;
+.l15:
+  v15: int = const 1;
+.l16:
+  v16: int = add v14 v15;
+.l17:
+  i: int = id v16;
+  jmp .l2;
+.l18:
+  v17: int = const 0;
+.l19:
+  ret v17;
+}
+@quadratic(a: int, b: int, c: int) {
+.l0:
+  v0: int = id b;
+.l1:
+  v1: int = id b;
+.l2:
+  v2: int = mul v0 v1;
+.l3:
+  v3: int = const 4;
+.l4:
+  v4: int = id a;
+.l5:
+  v5: int = mul v3 v4;
+.l6:
+  v6: int = id c;
+.l7:
+  v7: int = mul v5 v6;
+.l8:
+  v8: int = sub v2 v7;
+.l9:
+  s: int = id v8;
+.l10:
+  v9: int = const 2;
+.l11:
+  v10: int = id a;
+.l12:
+  v11: int = mul v9 v10;
+.l13:
+  d: int = id v11;
+.l14:
+  v12: int = const 0;
+.l15:
+  v13: int = id b;
+.l16:
+  v14: int = sub v12 v13;
+.l17:
+  v15: int = id s;
+.l18:
+  v16: int = call @sqrt v15;
+.l19:
+  v17: int = add v14 v16;
+.l20:
+  r1: int = id v17;
+.l21:
+  v18: int = const 0;
+.l22:
+  v19: int = id b;
+.l23:
+  v20: int = sub v18 v19;
+.l24:
+  v21: int = id s;
+.l25:
+  v22: int = call @sqrt v21;
+.l26:
+  v23: int = sub v20 v22;
+.l27:
+  r2: int = id v23;
+.l28:
+  v24: int = id r1;
+.l29:
+  v25: int = id d;
+.l30:
+  v26: int = div v24 v25;
+.l31:
+  print v26;
+.l32:
+  v27: int = const 0;
+.l33:
+  v28: int = id r2;
+.l34:
+  v29: int = id d;
+.l35:
+  v30: int = div v28 v29;
+.l36:
+  print v30;
+.l37:
+  v31: int = const 0;
+}

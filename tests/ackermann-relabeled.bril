@@ -1,0 +1,41 @@
+# Compute the Ackermann function recursively.;
+# WARNING: Will quickly exceed stack size;
+# ARGS: 3 6;
+@ack(m: int, n: int): int {
+.l0:
+  zero: int = const 0;
+.l1:
+  one: int = const 1;
+.l2:
+  cond_m: bool = eq m zero;
+  br cond_m .l3 .l4;
+.l3:
+  tmp: int = add n one;
+.l4:
+  ret tmp;
+.l5:
+  cond_n: bool = eq n zero;
+  br cond_n .l5 .l7;
+.l6:
+  m1: int = sub m one;
+.l7:
+  tmp: int = call @ack m1 one;
+.l8:
+  ret tmp;
+.l9:
+  m1: int = sub m one;
+.l10:
+  n1: int = sub n one;
+.l11:
+  t1: int = call @ack m n1;
+.l12:
+  t2: int = call @ack m1 t1;
+.l13:
+  ret t2;
+}
+@main(m: int, n: int) {
+.l0:
+  tmp: int = call @ack m n;
+.l1:
+  print tmp;
+}

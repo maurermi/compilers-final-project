@@ -1,0 +1,78 @@
+@main {
+.l0:
+  v0: int = const 5;
+.l1:
+  x: int = id v0;
+.l2:
+  v1: int = id x;
+.l3:
+  call @generateNthRow v1;
+.l4:
+  v2: int = const 0;
+}
+@generateNthRow(x: int) {
+.l0:
+  v0: int = const 1;
+.l1:
+  prev: int = id v0;
+.l2:
+  v1: int = id prev;
+.l3:
+  print v1;
+.l4:
+  v2: int = const 0;
+.l5:
+  v4: int = const 0;
+.l6:
+  i: int = id v4;
+.l7:
+  v5: int = id i;
+.l8:
+  v6: int = id x;
+.l9:
+  v7: bool = lt v5 v6;
+  br v7 .l10 .l31;
+.l10:
+  v8: int = id x;
+.l11:
+  v9: int = id i;
+.l12:
+  v10: int = sub v8 v9;
+.l13:
+  temp: int = id v10;
+.l14:
+  v11: int = id temp;
+.l15:
+  v12: int = const 1;
+.l16:
+  v13: int = add v11 v12;
+.l17:
+  temp: int = id v13;
+.l18:
+  v14: int = id prev;
+.l19:
+  v15: int = id temp;
+.l20:
+  v16: int = mul v14 v15;
+.l21:
+  curr: int = id v16;
+.l22:
+  v17: int = id curr;
+.l23:
+  print v17;
+.l24:
+  v18: int = const 0;
+.l25:
+  v19: int = id curr;
+.l26:
+  prev: int = id v19;
+.l27:
+  v20: int = id i;
+.l28:
+  v21: int = const 1;
+.l29:
+  v22: int = add v20 v21;
+.l30:
+  i: int = id v22;
+  jmp .l7;
+}

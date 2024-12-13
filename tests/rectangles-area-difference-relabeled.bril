@@ -1,0 +1,26 @@
+# ARGS: 5 10 6 13;
+@main (x1 : int, y1: int, x2: int, y2 : int) {
+.l0:
+  a1: int = call @area x1 y1;
+.l1:
+  a2: int = call @area x2 y2;
+.l2:
+  res: int = sub a1 a2;
+.l3:
+  a1_bigger: bool = gt a1 a2;
+  br a1_bigger .l6 .l4;
+.l4:
+  neg1: int = const -1;
+.l5:
+  res: int = mul res neg1;
+.l6:
+  print res;
+}
+@area (x : int, y : int) : int {
+.l0:
+  area: int = mul x y;
+.l1:
+  print area;
+.l2:
+  ret area;
+}

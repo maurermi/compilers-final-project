@@ -1,0 +1,109 @@
+# ARGS: 101;
+@main(input: int) {
+.l0:
+  v1: int = const 1;
+.l1:
+  index: int = id v1;
+.l2:
+  v2: int = id index;
+.l3:
+  v4: bool = lt v2 input;
+  br v4 .l4 .l49;
+.l4:
+  v5: int = id index;
+.l5:
+  v6: int = const 3;
+.l6:
+  v7: int = div v5 v6;
+.l7:
+  div3: int = id v7;
+.l8:
+  v8: int = id div3;
+.l9:
+  v9: int = const 3;
+.l10:
+  v10: int = mul v8 v9;
+.l11:
+  v11: int = id index;
+.l12:
+  v12: bool = eq v10 v11;
+.l13:
+  isFizz: bool = id v12;
+.l14:
+  v13: int = id index;
+.l15:
+  v14: int = const 5;
+.l16:
+  v15: int = div v13 v14;
+.l17:
+  div5: int = id v15;
+.l18:
+  v16: int = id div5;
+.l19:
+  v17: int = const 5;
+.l20:
+  v18: int = mul v16 v17;
+.l21:
+  v19: int = id index;
+.l22:
+  v20: bool = eq v18 v19;
+.l23:
+  isBuzz: bool = id v20;
+.l24:
+  v22: bool = id isFizz;
+  br v22 .l25 .l36;
+.l25:
+  v24: bool = id isBuzz;
+  br v24 .l26 .l31;
+.l26:
+  v25: int = const 0;
+.l27:
+  v26: int = const 1;
+.l28:
+  v27: int = sub v25 v26;
+.l29:
+  print v27;
+.l30:
+  v28: int = const 0;
+  jmp .l36;
+.l31:
+  v29: int = const 0;
+.l32:
+  v30: int = const 2;
+.l33:
+  v31: int = sub v29 v30;
+.l34:
+  print v31;
+.l35:
+  v32: int = const 0;
+  jmp .l45;
+.l36:
+  v34: bool = id isBuzz;
+  br v34 .l37 .l42;
+.l37:
+  v35: int = const 0;
+.l38:
+  v36: int = const 3;
+.l39:
+  v37: int = sub v35 v36;
+.l40:
+  print v37;
+.l41:
+  v38: int = const 0;
+  jmp .l45;
+.l42:
+  v39: int = id index;
+.l43:
+  print v39;
+.l44:
+  v40: int = const 0;
+.l45:
+  v41: int = id index;
+.l46:
+  v42: int = const 1;
+.l47:
+  v43: int = add v41 v42;
+.l48:
+  index: int = id v43;
+  jmp .l2;
+}

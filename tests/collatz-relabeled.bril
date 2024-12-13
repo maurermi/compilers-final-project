@@ -1,0 +1,35 @@
+# ARGS: 7;
+# Compute the Collatz sequence from *n*. This may not terminate for all *n*, but;
+# it is at least known to terminate for all *n* up to a large value.;
+# see https://en.wikipedia.org/wiki/Collatz_conjecture;
+@main(x: int) {
+.l0:
+  one: int = const 1;
+.l1:
+  two: int = const 2;
+.l2:
+  three: int = const 3;
+  jmp .l10;
+.l3:
+  eq_one: bool = eq x one;
+  br eq_one .l11 .l4;
+# No modulus! x is even iff x/2 * 2 = x;
+.l4:
+  half: int = div x two;
+.l5:
+  doublehalf: int = mul half two;
+.l6:
+  even: bool = eq x doublehalf;
+  br even .l7 .l8;
+.l7:
+  x: int = div x two;
+  jmp .l10;
+.l8:
+  x: int = mul x three;
+.l9:
+  x: int = add x one;
+# fallthrough;
+.l10:
+  print x;
+  jmp .l3;
+}

@@ -1,0 +1,213 @@
+{
+  "functions": [
+    {
+      "instrs": [
+        {
+          "label": "l0"
+        },
+        {
+          "dest": "n",
+          "op": "const",
+          "type": "int",
+          "value": 10
+        },
+        {
+          "label": "l1"
+        },
+        {
+          "dest": "one",
+          "op": "const",
+          "type": "int",
+          "value": 1
+        },
+        {
+          "label": "l2"
+        },
+        {
+          "dest": "a",
+          "op": "const",
+          "type": "int",
+          "value": 1
+        },
+        {
+          "label": "l3"
+        },
+        {
+          "args": [
+            "n",
+            "one"
+          ],
+          "dest": "b",
+          "op": "add",
+          "type": "int"
+        },
+        {
+          "label": "l4"
+        },
+        {
+          "dest": "magic",
+          "op": "const",
+          "type": "int",
+          "value": 50
+        },
+        {
+          "label": "l5"
+        },
+        {
+          "args": [
+            "b",
+            "a"
+          ],
+          "dest": "branch",
+          "op": "gt",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "branch"
+          ],
+          "labels": [
+            "l6",
+            "l7"
+          ],
+          "op": "br"
+        },
+        {
+          "label": "l6"
+        },
+        {
+          "args": [
+            "a"
+          ],
+          "dest": "b",
+          "op": "id"
+        },
+        {
+          "labels": [
+            "l11"
+          ],
+          "op": "jmp"
+        },
+        {
+          "label": "l7"
+        },
+        {
+          "args": [
+            "b",
+            "a"
+          ],
+          "dest": "b",
+          "op": "add"
+        },
+        {
+          "label": "l8"
+        },
+        {
+          "args": [
+            "b",
+            "magic"
+          ],
+          "dest": "branch",
+          "op": "gt",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "branch"
+          ],
+          "labels": [
+            "l9",
+            "l10"
+          ],
+          "op": "br"
+        },
+        {
+          "label": "l9"
+        },
+        {
+          "args": [
+            "b",
+            "a"
+          ],
+          "dest": "b",
+          "op": "sub"
+        },
+        {
+          "labels": [
+            "l11"
+          ],
+          "op": "jmp"
+        },
+        {
+          "label": "l10"
+        },
+        {
+          "args": [
+            "b",
+            "a"
+          ],
+          "dest": "b",
+          "op": "mul"
+        },
+        {
+          "label": "l11"
+        },
+        {
+          "args": [
+            "a",
+            "b"
+          ],
+          "dest": "c",
+          "op": "add",
+          "type": "int"
+        },
+        {
+          "label": "l12"
+        },
+        {
+          "args": [
+            "a",
+            "a"
+          ],
+          "dest": "d",
+          "op": "add",
+          "type": "int"
+        },
+        {
+          "label": "l13"
+        },
+        {
+          "args": [
+            "c",
+            "d"
+          ],
+          "dest": "e",
+          "op": "add",
+          "type": "int"
+        },
+        {
+          "label": "l14"
+        },
+        {
+          "args": [
+            "e",
+            "n"
+          ],
+          "dest": "f",
+          "op": "add",
+          "type": "int"
+        },
+        {
+          "label": "l15"
+        },
+        {
+          "args": [
+            "f"
+          ],
+          "op": "ret"
+        }
+      ],
+      "name": "main"
+    }
+  ]
+}

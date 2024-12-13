@@ -1,0 +1,62 @@
+# ARGS: 645634654;
+# Computes the digital root of the given argument. This is done by iteratively;
+# adding each digit together until the result is a single number.;
+# This is equivalent to the input mod 9 except if that value would be zero;
+# in which case the digital root is nine.;
+@main(input: int) {
+.l0:
+  zero: int = const 0;
+.l1:
+  ten: int = const 10;
+.l2:
+  result: int = const 0;
+.l3:
+  digit: int = call @peel_last_digit input;
+.l4:
+  input: int = div input ten;
+.l5:
+  result: int = add result digit;
+.l6:
+  print result;
+.l7:
+  processed: bool = call @is_single_digit result;
+  br processed .l11 .l8;
+.l8:
+  r0: int = call @peel_last_digit result;
+.l9:
+  result: int = div result ten;
+.l10:
+  result: int = add result r0;
+  jmp .l6;
+.l11:
+  done: bool = eq input zero;
+  br done .l12 .l3;
+.l12:
+  print result;
+}
+@is_single_digit(input: int): bool {
+.l0:
+  ten: int = const 10;
+.l1:
+  zero: int = const 0;
+.l2:
+  divided: int = div input ten;
+.l3:
+  mul_by_ten: int = mul divided ten;
+.l4:
+  result: bool = eq mul_by_ten zero;
+.l5:
+  ret result;
+}
+@peel_last_digit(input: int): int {
+.l0:
+  ten: int = const 10;
+.l1:
+  div_by_ten: int = div input ten;
+.l2:
+  mul_by_ten: int = mul div_by_ten ten;
+.l3:
+  last_digit: int = sub input mul_by_ten;
+.l4:
+  ret last_digit;
+}

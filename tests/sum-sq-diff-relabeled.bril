@@ -1,0 +1,123 @@
+@sumOfSquares(n: int): int {
+.l0:
+  v0: int = const 0;
+.l1:
+  res: int = id v0;
+.l2:
+  v2: int = const 1;
+.l3:
+  i: int = id v2;
+.l4:
+  v3: int = id i;
+.l5:
+  v4: int = id n;
+.l6:
+  v5: bool = le v3 v4;
+  br v5 .l7 .l15;
+.l7:
+  v6: int = id i;
+.l8:
+  v7: int = id i;
+.l9:
+  v8: int = mul v6 v7;
+.l10:
+  sq: int = id v8;
+.l11:
+  v9: int = id res;
+.l12:
+  v10: int = id sq;
+.l13:
+  v11: int = add v9 v10;
+.l14:
+  res: int = id v11;
+.l15:
+  v12: int = id i;
+.l16:
+  v13: int = const 1;
+.l17:
+  v14: int = add v12 v13;
+.l18:
+  i: int = id v14;
+  jmp .l4;
+.l19:
+  v15: int = id res;
+.l20:
+  ret v15;
+}
+@squareOfSum(n: int): int {
+.l0:
+  v0: int = const 0;
+.l1:
+  res: int = id v0;
+.l2:
+  v2: int = const 1;
+.l3:
+  i: int = id v2;
+.l4:
+  v3: int = id i;
+.l5:
+  v4: int = id n;
+.l6:
+  v5: bool = le v3 v4;
+  br v5 .l7 .l19;
+.l7:
+  v6: int = id res;
+.l8:
+  v7: int = id i;
+.l9:
+  v8: int = add v6 v7;
+.l10:
+  res: int = id v8;
+.l11:
+  v9: int = id i;
+.l12:
+  v10: int = const 1;
+.l13:
+  v11: int = add v9 v10;
+.l14:
+  i: int = id v11;
+  jmp .l4;
+.l15:
+  v12: int = id res;
+.l16:
+  v13: int = id res;
+.l17:
+  v14: int = mul v12 v13;
+.l18:
+  square: int = id v14;
+.l19:
+  v15: int = id square;
+.l20:
+  ret v15;
+}
+# ARGS: 100;
+@main(n: int) {
+.l0:
+  v0: int = id n;
+.l1:
+  sum: int = call @sumOfSquares v0;
+.l2:
+  sum: int = id sum;
+.l3:
+  v1: int = id n;
+.l4:
+  square: int = call @squareOfSum v1;
+.l5:
+  square: int = id square;
+.l6:
+  v2: int = id square;
+.l7:
+  v3: int = id sum;
+.l8:
+  v4: int = sub v2 v3;
+.l9:
+  diff: int = id v4;
+.l10:
+  v5: int = id diff;
+.l11:
+  print v5;
+.l12:
+  v6: int = const 0;
+.l13:
+  v7: int = id diff;
+}

@@ -1,0 +1,241 @@
+{
+  "functions": [
+    {
+      "args": [
+        {
+          "name": "m",
+          "type": "int"
+        },
+        {
+          "name": "n",
+          "type": "int"
+        }
+      ],
+      "instrs": [
+        {
+          "label": "l0"
+        },
+        {
+          "dest": "zero",
+          "op": "const",
+          "type": "int",
+          "value": 0
+        },
+        {
+          "label": "l1"
+        },
+        {
+          "dest": "one",
+          "op": "const",
+          "type": "int",
+          "value": 1
+        },
+        {
+          "label": "l2"
+        },
+        {
+          "args": [
+            "m",
+            "zero"
+          ],
+          "dest": "cond_m",
+          "op": "eq",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "cond_m"
+          ],
+          "labels": [
+            "l3",
+            "l4"
+          ],
+          "op": "br"
+        },
+        {
+          "label": "l3"
+        },
+        {
+          "args": [
+            "n",
+            "one"
+          ],
+          "dest": "tmp",
+          "op": "add",
+          "type": "int"
+        },
+        {
+          "label": "l4"
+        },
+        {
+          "args": [
+            "tmp"
+          ],
+          "op": "ret"
+        },
+        {
+          "label": "l5"
+        },
+        {
+          "args": [
+            "n",
+            "zero"
+          ],
+          "dest": "cond_n",
+          "op": "eq",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "cond_n"
+          ],
+          "labels": [
+            "l5",
+            "l7"
+          ],
+          "op": "br"
+        },
+        {
+          "label": "l6"
+        },
+        {
+          "args": [
+            "m",
+            "one"
+          ],
+          "dest": "m1",
+          "op": "sub",
+          "type": "int"
+        },
+        {
+          "label": "l7"
+        },
+        {
+          "args": [
+            "m1",
+            "one"
+          ],
+          "dest": "tmp",
+          "funcs": [
+            "ack"
+          ],
+          "op": "call",
+          "type": "int"
+        },
+        {
+          "label": "l8"
+        },
+        {
+          "args": [
+            "tmp"
+          ],
+          "op": "ret"
+        },
+        {
+          "label": "l9"
+        },
+        {
+          "args": [
+            "m",
+            "one"
+          ],
+          "dest": "m1",
+          "op": "sub",
+          "type": "int"
+        },
+        {
+          "label": "l10"
+        },
+        {
+          "args": [
+            "n",
+            "one"
+          ],
+          "dest": "n1",
+          "op": "sub",
+          "type": "int"
+        },
+        {
+          "label": "l11"
+        },
+        {
+          "args": [
+            "m",
+            "n1"
+          ],
+          "dest": "t1",
+          "funcs": [
+            "ack"
+          ],
+          "op": "call",
+          "type": "int"
+        },
+        {
+          "label": "l12"
+        },
+        {
+          "args": [
+            "m1",
+            "t1"
+          ],
+          "dest": "t2",
+          "funcs": [
+            "ack"
+          ],
+          "op": "call",
+          "type": "int"
+        },
+        {
+          "label": "l13"
+        },
+        {
+          "args": [
+            "t2"
+          ],
+          "op": "ret"
+        }
+      ],
+      "name": "ack",
+      "type": "int"
+    },
+    {
+      "args": [
+        {
+          "name": "m",
+          "type": "int"
+        },
+        {
+          "name": "n",
+          "type": "int"
+        }
+      ],
+      "instrs": [
+        {
+          "label": "l0"
+        },
+        {
+          "args": [
+            "m",
+            "n"
+          ],
+          "dest": "tmp",
+          "funcs": [
+            "ack"
+          ],
+          "op": "call",
+          "type": "int"
+        },
+        {
+          "label": "l1"
+        },
+        {
+          "args": [
+            "tmp"
+          ],
+          "op": "print"
+        }
+      ],
+      "name": "main"
+    }
+  ]
+}

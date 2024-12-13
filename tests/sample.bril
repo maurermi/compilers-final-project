@@ -1,0 +1,31 @@
+# ARGS: 10
+# Compute the 10th element in the catalan sequence, which is given by:
+#   c0 = 0; c(n+1) = sum(ci * c(n-i) for i = 0..n)
+@main() {
+  n: int = const 10;
+  one: int = const 1;
+  a: int = const 1;
+  b: int = add n one;
+  magic: int = const 50;
+  branch: bool = gt b a;
+  br branch .if .else;
+.if:
+  b = id a;
+  jmp .then;
+.else:
+  b = add b a;
+  branch: bool = gt b magic;
+  br branch .if2 .else2;
+.if2:
+  b = sub b a;
+  jmp .then;
+.else2:
+  b = mul b a;
+.then:
+  # There should be a 3-way phi node here.
+  c: int = add a b;
+  d: int = add a a;
+  e: int = add c d;
+  f: int = add e n;
+  ret f;
+}

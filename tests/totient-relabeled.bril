@@ -1,0 +1,65 @@
+# ARGS: 2023;
+@main (n: int) {
+.l0:
+  print n;
+.l1:
+  tot: int = call @totient n;
+.l2:
+  print tot;
+}
+@totient (n: int): int {
+.l0:
+  result: int = id n;
+.l1:
+  p: int = const 2;
+.l2:
+  one: int = const 1;
+.l3:
+  zero: int = const 0;
+.l4:
+  pp: int = mul p p;
+.l5:
+  cond: bool = le pp n;
+  br cond .l6 .l15;
+.l6:
+  npmod: int = call @mod n p;
+.l7:
+  if_cond: bool = eq npmod zero;
+  br if_cond .l8 .l14;
+.l8:
+  npmod: int = call @mod n p;
+.l9:
+  while_cond: bool = eq npmod zero;
+  br while_cond .l10 .l12;
+.l10:
+  npdiv: int = div n p;
+.l11:
+  n: int = id npdiv;
+  jmp .l8;
+.l12:
+  resdiv: int = div result p;
+.l13:
+  result: int = sub result resdiv;
+.l14:
+  p: int = add p one;
+  jmp .l4;
+.l15:
+  final_if_cond: bool = gt n one;
+  br final_if_cond .l16 .l18;
+.l16:
+  resdiv: int = div result n;
+.l17:
+  result: int = sub result resdiv;
+.l18:
+  ret result;
+}
+@mod (a: int, b: int): int {
+.l0:
+  ad: int = div a b;
+.l1:
+  mad: int = mul b ad;
+.l2:
+  ans: int = sub a mad;
+.l3:
+  ret ans;
+}

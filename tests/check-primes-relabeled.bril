@@ -1,0 +1,109 @@
+# ARGS: 50;
+@main(n: int) {
+.l0:
+  v2: int = const 1;
+.l1:
+  i: int = id v2;
+.l2:
+  v3: int = id i;
+.l3:
+  v4: int = id n;
+.l4:
+  v5: bool = lt v3 v4;
+  br v5 .l5 .l19;
+.l5:
+  v6: int = id i;
+.l6:
+  isPrime: bool = call @checkPrime v6;
+.l7:
+  isPrime: bool = id isPrime;
+.l8:
+  v8: bool = id isPrime;
+  br v8 .l9 .l12;
+.l9:
+  v9: int = const 1;
+.l10:
+  print v9;
+.l11:
+  v10: int = const 0;
+  jmp .l15;
+.l12:
+  v11: int = const 0;
+.l13:
+  print v11;
+.l14:
+  v12: int = const 0;
+.l15:
+  v13: int = id i;
+.l16:
+  v14: int = const 1;
+.l17:
+  v15: int = add v13 v14;
+.l18:
+  i: int = id v15;
+  jmp .l2;
+}
+@checkPrime(x: int): bool {
+.l0:
+  v1: int = id x;
+.l1:
+  v2: int = const 1;
+.l2:
+  v3: bool = le v1 v2;
+  br v3 .l3 .l4;
+.l3:
+  v4: bool = const false;
+.l4:
+  ret v4;
+.l5:
+  v6: int = const 2;
+.l6:
+  i: int = id v6;
+.l7:
+  v7: int = id i;
+.l8:
+  v8: int = id x;
+.l9:
+  v9: bool = lt v7 v8;
+  br v9 .l9 .l25;
+.l10:
+  v10: int = id x;
+.l11:
+  v11: int = id i;
+.l12:
+  v12: int = div v10 v11;
+.l13:
+  div: int = id v12;
+.l14:
+  v13: int = id div;
+.l15:
+  v14: int = id i;
+.l16:
+  v15: int = mul v13 v14;
+.l17:
+  v16: int = id x;
+.l18:
+  v17: bool = eq v15 v16;
+.l19:
+  isDivisible: bool = id v17;
+.l20:
+  v19: bool = id isDivisible;
+  br v19 .l20 .l21;
+.l21:
+  v20: bool = const false;
+.l22:
+  ret v20;
+.l23:
+  v21: int = id i;
+.l24:
+  v22: int = const 1;
+.l25:
+  v23: int = add v21 v22;
+.l26:
+  i: int = id v23;
+  jmp .l7;
+.l27:
+  v24: bool = const true;
+.l28:
+  ret v24;
+}

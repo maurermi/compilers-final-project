@@ -1,0 +1,160 @@
+{
+  "functions": [
+    {
+      "instrs": [
+        {
+          "label": "l0"
+        },
+        {
+          "dest": "z",
+          "op": "const",
+          "type": "int",
+          "value": 0
+        },
+        {
+          "label": "l1"
+        },
+        {
+          "dest": "a",
+          "op": "const",
+          "type": "int",
+          "value": 1
+        },
+        {
+          "label": "l2"
+        },
+        {
+          "dest": "b",
+          "op": "const",
+          "type": "int",
+          "value": 2
+        },
+        {
+          "label": "l3"
+        },
+        {
+          "dest": "c",
+          "op": "const",
+          "type": "int",
+          "value": 3
+        },
+        {
+          "label": "l4"
+        },
+        {
+          "dest": "d",
+          "op": "const",
+          "type": "int",
+          "value": 4
+        },
+        {
+          "label": "l5"
+        },
+        {
+          "args": [
+            "a",
+            "d"
+          ],
+          "dest": "e",
+          "op": "add",
+          "type": "int"
+        },
+        {
+          "label": "l6"
+        },
+        {
+          "args": [
+            "b",
+            "c"
+          ],
+          "dest": "f",
+          "op": "add",
+          "type": "int"
+        },
+        {
+          "label": "l7"
+        },
+        {
+          "args": [
+            "b",
+            "f"
+          ],
+          "dest": "f",
+          "op": "add",
+          "type": "int"
+        },
+        {
+          "label": "l8"
+        },
+        {
+          "args": [
+            "e",
+            "z"
+          ],
+          "dest": "r",
+          "op": "eq",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "r"
+          ],
+          "labels": [
+            "l9",
+            "l10"
+          ],
+          "op": "br"
+        },
+        {
+          "label": "l9"
+        },
+        {
+          "args": [
+            "e",
+            "f"
+          ],
+          "dest": "d",
+          "op": "sub"
+        },
+        {
+          "labels": [
+            "l11"
+          ],
+          "op": "jmp"
+        },
+        {
+          "label": "l10"
+        },
+        {
+          "args": [
+            "e",
+            "f"
+          ],
+          "dest": "d",
+          "op": "add"
+        },
+        {
+          "label": "l11"
+        },
+        {
+          "args": [
+            "d"
+          ],
+          "dest": "g",
+          "op": "id",
+          "type": "int"
+        },
+        {
+          "label": "l12"
+        },
+        {
+          "args": [
+            "g"
+          ],
+          "op": "ret"
+        }
+      ],
+      "name": "main"
+    }
+  ]
+}

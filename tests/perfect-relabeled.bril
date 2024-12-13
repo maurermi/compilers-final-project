@@ -1,0 +1,45 @@
+# ARGS: 496;
+@main(input: int) {
+.l0:
+  n: int = id input;
+.l1:
+  v0: int = const 0;
+.l2:
+  v1: int = const 1;
+.l3:
+  v2: int = const 2;
+.l4:
+  sum: int = id v1;
+.l5:
+  i: int = id v2;
+.l6:
+  result: int = id v1;
+.l7:
+  ii: int = mul i i;
+.l8:
+  comp: bool = gt ii n;
+  br comp .l16 .l9;
+.l9:
+  qut: int = div n i;
+.l10:
+  mpt: int = mul qut i;
+.l11:
+  dif: int = sub n mpt;
+.l12:
+  comp1: bool = eq dif v0;
+  br comp1 .l13 .l15;
+.l13:
+  sum: int = add sum i;
+.l14:
+  sum: int = add sum qut;
+.l15:
+  i: int = add i v1;
+  jmp .l7;
+.l16:
+  comp2: bool = eq sum n;
+  br comp2 .l17 .l18;
+.l17:
+  result: int = id v0;
+.l18:
+  print result;
+}

@@ -1,0 +1,32 @@
+# ARGS: 128;
+@main(n: int) {
+.l0:
+  call @printBinary n;
+}
+@printBinary(n: int) {
+.l0:
+  zero: int = const 0;
+.l1:
+  cond: bool = eq n zero;
+  br cond .l7 .l2;
+.l2:
+  two: int = const 2;
+.l3:
+  v0: int = call @mod n two;
+.l4:
+  v1: int = div n two;
+.l5:
+  call @printBinary v1;
+.l6:
+  print v0;
+}
+@mod(a0: int, a1: int) : int {
+.l0:
+  v0: int = div a0 a1;
+.l1:
+  v1: int = mul v0 a1;
+.l2:
+  v2: int = sub a0 v1;
+.l3:
+  ret v2;
+}

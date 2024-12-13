@@ -1,0 +1,214 @@
+{
+  "functions": [
+    {
+      "args": [
+        {
+          "name": "n",
+          "type": "int"
+        },
+        {
+          "name": "arrows",
+          "type": "int"
+        },
+        {
+          "name": "repeats",
+          "type": "int"
+        }
+      ],
+      "instrs": [
+        {
+          "label": "l0"
+        },
+        {
+          "args": [
+            "n",
+            "arrows",
+            "repeats"
+          ],
+          "dest": "ans",
+          "funcs": [
+            "up_arrow"
+          ],
+          "op": "call",
+          "type": "int"
+        },
+        {
+          "label": "l1"
+        },
+        {
+          "args": [
+            "ans"
+          ],
+          "op": "print"
+        }
+      ],
+      "name": "main"
+    },
+    {
+      "args": [
+        {
+          "name": "num",
+          "type": "int"
+        },
+        {
+          "name": "arrows",
+          "type": "int"
+        },
+        {
+          "name": "repeats",
+          "type": "int"
+        }
+      ],
+      "instrs": [
+        {
+          "label": "l0"
+        },
+        {
+          "dest": "one",
+          "op": "const",
+          "type": "int",
+          "value": 1
+        },
+        {
+          "label": "l1"
+        },
+        {
+          "args": [
+            "num"
+          ],
+          "dest": "ans",
+          "op": "id",
+          "type": "int"
+        },
+        {
+          "label": "l2"
+        },
+        {
+          "dest": "i",
+          "op": "const",
+          "type": "int",
+          "value": 1
+        },
+        {
+          "label": "l3"
+        },
+        {
+          "args": [
+            "i",
+            "repeats"
+          ],
+          "dest": "keepgoing",
+          "op": "lt",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "keepgoing"
+          ],
+          "labels": [
+            "l4",
+            "l9"
+          ],
+          "op": "br"
+        },
+        {
+          "label": "l4"
+        },
+        {
+          "args": [
+            "arrows",
+            "one"
+          ],
+          "dest": "base_case",
+          "op": "le",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "base_case"
+          ],
+          "labels": [
+            "l5",
+            "l6"
+          ],
+          "op": "br"
+        },
+        {
+          "label": "l5"
+        },
+        {
+          "args": [
+            "ans",
+            "num"
+          ],
+          "dest": "ans",
+          "op": "mul",
+          "type": "int"
+        },
+        {
+          "labels": [
+            "l8"
+          ],
+          "op": "jmp"
+        },
+        {
+          "label": "l6"
+        },
+        {
+          "args": [
+            "arrows",
+            "one"
+          ],
+          "dest": "new_arrows",
+          "op": "sub",
+          "type": "int"
+        },
+        {
+          "label": "l7"
+        },
+        {
+          "args": [
+            "num",
+            "new_arrows",
+            "ans"
+          ],
+          "dest": "ans",
+          "funcs": [
+            "up_arrow"
+          ],
+          "op": "call",
+          "type": "int"
+        },
+        {
+          "label": "l8"
+        },
+        {
+          "args": [
+            "i",
+            "one"
+          ],
+          "dest": "i",
+          "op": "add",
+          "type": "int"
+        },
+        {
+          "labels": [
+            "l3"
+          ],
+          "op": "jmp"
+        },
+        {
+          "label": "l9"
+        },
+        {
+          "args": [
+            "ans"
+          ],
+          "op": "ret"
+        }
+      ],
+      "name": "up_arrow",
+      "type": "int"
+    }
+  ]
+}

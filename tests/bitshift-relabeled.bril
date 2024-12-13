@@ -1,0 +1,134 @@
+# ARGS: 3 5 10000 4;
+@pow(x: int, n: int): int {
+.l0:
+  v1: int = id n;
+.l1:
+  v2: int = const 1;
+.l2:
+  v3: bool = eq v1 v2;
+  br v3 .l3 .l4;
+.l3:
+  v4: int = id x;
+.l4:
+  ret v4;
+.l5:
+  v5: int = id x;
+.l6:
+  v6: int = id n;
+.l7:
+  v7: int = const 2;
+.l8:
+  v8: int = div v6 v7;
+.l9:
+  half: int = call @pow v5 v8;
+.l10:
+  half: int = id half;
+.l11:
+  v9: int = id half;
+.l12:
+  v10: int = id half;
+.l13:
+  v11: int = mul v9 v10;
+.l14:
+  half2: int = id v11;
+.l15:
+  v13: int = id n;
+.l16:
+  v14: int = const 2;
+.l17:
+  v15: int = call @mod v13 v14;
+.l18:
+  v16: int = const 1;
+.l19:
+  v17: bool = eq v15 v16;
+  br v17 .l19 .l23;
+.l20:
+  v18: int = id half2;
+.l21:
+  v19: int = id x;
+.l22:
+  v20: int = mul v18 v19;
+.l23:
+  ans: int = id v20;
+  jmp .l25;
+.l24:
+  v21: int = id half2;
+.l25:
+  ans: int = id v21;
+.l26:
+  v22: int = id ans;
+.l27:
+  ret v22;
+}
+@mod(a: int, b: int): int {
+.l0:
+  v0: int = id a;
+.l1:
+  v1: int = id a;
+.l2:
+  v2: int = id b;
+.l3:
+  v3: int = div v1 v2;
+.l4:
+  v4: int = id b;
+.l5:
+  v5: int = mul v3 v4;
+.l6:
+  v6: int = sub v0 v5;
+.l7:
+  ret v6;
+}
+@LEFTSHIFT(x: int, step: int): int {
+.l0:
+  v0: int = const 2;
+.l1:
+  v1: int = id step;
+.l2:
+  p: int = call @pow v0 v1;
+.l3:
+  p: int = id p;
+.l4:
+  v2: int = id x;
+.l5:
+  v3: int = id p;
+.l6:
+  v4: int = mul v2 v3;
+.l7:
+  ret v4;
+}
+@RIGHTSHIFT(x: int, step: int): int {
+.l0:
+  v0: int = const 2;
+.l1:
+  v1: int = id step;
+.l2:
+  p: int = call @pow v0 v1;
+.l3:
+  p: int = id p;
+.l4:
+  v2: int = id x;
+.l5:
+  v3: int = id p;
+.l6:
+  v4: int = div v2 v3;
+.l7:
+  ret v4;
+}
+@main(a: int, b: int, c: int, d: int) {
+.l0:
+  v2: int = id a;
+.l1:
+  v3: int = id b;
+.l2:
+  ans1: int = call @LEFTSHIFT v2 v3;
+.l3:
+  print ans1;
+.l4:
+  v4: int = id c;
+.l5:
+  v5: int = id d;
+.l6:
+  ans2: int = call @RIGHTSHIFT v4 v5;
+.l7:
+  print ans2;
+}

@@ -1,0 +1,122 @@
+{
+  "functions": [
+    {
+      "instrs": [
+        {
+          "label": "l0"
+        },
+        {
+          "dest": "i",
+          "op": "const",
+          "type": "int",
+          "value": 1
+        },
+        {
+          "label": "l1"
+        },
+        {
+          "dest": "one",
+          "op": "const",
+          "type": "int",
+          "value": 1
+        },
+        {
+          "label": "l2"
+        },
+        {
+          "dest": "max",
+          "op": "const",
+          "type": "int",
+          "value": 10
+        },
+        {
+          "label": "l3"
+        },
+        {
+          "dest": "b",
+          "op": "const",
+          "type": "int",
+          "value": 0
+        },
+        {
+          "label": "l4"
+        },
+        {
+          "dest": "a",
+          "op": "const",
+          "type": "int",
+          "value": 1
+        },
+        {
+          "label": "l5"
+        },
+        {
+          "args": [
+            "i",
+            "max"
+          ],
+          "dest": "branch",
+          "op": "lt",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "branch"
+          ],
+          "labels": [
+            "l6",
+            "l8"
+          ],
+          "op": "br"
+        },
+        {
+          "label": "l6"
+        },
+        {
+          "args": [
+            "b",
+            "a"
+          ],
+          "dest": "b",
+          "op": "add"
+        },
+        {
+          "label": "l7"
+        },
+        {
+          "args": [
+            "i",
+            "one"
+          ],
+          "dest": "i",
+          "op": "add"
+        },
+        {
+          "labels": [
+            "l5"
+          ],
+          "op": "jmp"
+        },
+        {
+          "label": "l8"
+        },
+        {
+          "args": [
+            "b"
+          ],
+          "op": "print"
+        },
+        {
+          "label": "l9"
+        },
+        {
+          "args": [
+            "b"
+          ],
+          "op": "ret"
+        }
+      ],
+      "name": "main"
+    }
+  ]
+}

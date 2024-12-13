@@ -1,0 +1,246 @@
+{
+  "functions": [
+    {
+      "args": [
+        {
+          "name": "input",
+          "type": "int"
+        }
+      ],
+      "instrs": [
+        {
+          "label": "l0"
+        },
+        {
+          "args": [
+            "input"
+          ],
+          "dest": "catn",
+          "funcs": [
+            "catalan"
+          ],
+          "op": "call",
+          "type": "int"
+        },
+        {
+          "label": "l1"
+        },
+        {
+          "args": [
+            "catn"
+          ],
+          "op": "print"
+        }
+      ],
+      "name": "main"
+    },
+    {
+      "args": [
+        {
+          "name": "n",
+          "type": "int"
+        }
+      ],
+      "instrs": [
+        {
+          "label": "l0"
+        },
+        {
+          "dest": "one",
+          "op": "const",
+          "type": "int",
+          "value": 1
+        },
+        {
+          "label": "l1"
+        },
+        {
+          "dest": "zero",
+          "op": "const",
+          "type": "int",
+          "value": 0
+        },
+        {
+          "label": "l2"
+        },
+        {
+          "args": [
+            "n",
+            "zero"
+          ],
+          "dest": "guard0",
+          "op": "eq",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "guard0"
+          ],
+          "labels": [
+            "l3",
+            "l3"
+          ],
+          "op": "br"
+        },
+        {
+          "label": "l3"
+        },
+        {
+          "args": [
+            "one"
+          ],
+          "op": "ret"
+        },
+        {
+          "label": "l4"
+        },
+        {
+          "args": [
+            "zero"
+          ],
+          "dest": "sum",
+          "op": "id",
+          "type": "int"
+        },
+        {
+          "label": "l5"
+        },
+        {
+          "args": [
+            "zero"
+          ],
+          "dest": "idx",
+          "op": "id",
+          "type": "int"
+        },
+        {
+          "label": "l6"
+        },
+        {
+          "args": [
+            "n",
+            "one"
+          ],
+          "dest": "n",
+          "op": "sub",
+          "type": "int"
+        },
+        {
+          "label": "l7"
+        },
+        {
+          "args": [
+            "idx",
+            "n"
+          ],
+          "dest": "guard1",
+          "op": "le",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "guard1"
+          ],
+          "labels": [
+            "l7",
+            "l13"
+          ],
+          "op": "br"
+        },
+        {
+          "label": "l8"
+        },
+        {
+          "args": [
+            "n",
+            "idx"
+          ],
+          "dest": "n2",
+          "op": "sub",
+          "type": "int"
+        },
+        {
+          "label": "l9"
+        },
+        {
+          "args": [
+            "idx"
+          ],
+          "dest": "v1",
+          "funcs": [
+            "catalan"
+          ],
+          "op": "call",
+          "type": "int"
+        },
+        {
+          "label": "l10"
+        },
+        {
+          "args": [
+            "n2"
+          ],
+          "dest": "v2",
+          "funcs": [
+            "catalan"
+          ],
+          "op": "call",
+          "type": "int"
+        },
+        {
+          "label": "l11"
+        },
+        {
+          "args": [
+            "v1",
+            "v2"
+          ],
+          "dest": "elti",
+          "op": "mul",
+          "type": "int"
+        },
+        {
+          "label": "l12"
+        },
+        {
+          "args": [
+            "sum",
+            "elti"
+          ],
+          "dest": "sum",
+          "op": "add",
+          "type": "int"
+        },
+        {
+          "label": "l13"
+        },
+        {
+          "args": [
+            "idx",
+            "one"
+          ],
+          "dest": "idx",
+          "op": "add",
+          "type": "int"
+        },
+        {
+          "labels": [
+            "l7"
+          ],
+          "op": "jmp"
+        },
+        {
+          "label": "l14"
+        },
+        {
+          "args": [
+            "sum"
+          ],
+          "op": "ret"
+        }
+      ],
+      "name": "catalan",
+      "type": "int"
+    }
+  ]
+}

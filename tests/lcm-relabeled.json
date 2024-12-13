@@ -1,0 +1,257 @@
+{
+  "functions": [
+    {
+      "args": [
+        {
+          "name": "x",
+          "type": "int"
+        },
+        {
+          "name": "y",
+          "type": "int"
+        }
+      ],
+      "instrs": [
+        {
+          "label": "l0"
+        },
+        {
+          "args": [
+            "y"
+          ],
+          "dest": "greater",
+          "op": "id",
+          "type": "int"
+        },
+        {
+          "label": "l1"
+        },
+        {
+          "args": [
+            "x",
+            "y"
+          ],
+          "dest": "v4",
+          "op": "gt",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "v4"
+          ],
+          "labels": [
+            "l2",
+            "l3"
+          ],
+          "op": "br"
+        },
+        {
+          "label": "l2"
+        },
+        {
+          "args": [
+            "x"
+          ],
+          "dest": "greater",
+          "op": "id",
+          "type": "int"
+        },
+        {
+          "labels": [
+            "l3"
+          ],
+          "op": "jmp"
+        },
+        {
+          "label": "l3"
+        },
+        {
+          "args": [
+            "greater",
+            "x"
+          ],
+          "dest": "modX",
+          "funcs": [
+            "getMod"
+          ],
+          "op": "call",
+          "type": "int"
+        },
+        {
+          "label": "l4"
+        },
+        {
+          "args": [
+            "greater",
+            "y"
+          ],
+          "dest": "modY",
+          "funcs": [
+            "getMod"
+          ],
+          "op": "call",
+          "type": "int"
+        },
+        {
+          "label": "l5"
+        },
+        {
+          "dest": "zero",
+          "op": "const",
+          "type": "int",
+          "value": 0
+        },
+        {
+          "label": "l6"
+        },
+        {
+          "args": [
+            "modX",
+            "zero"
+          ],
+          "dest": "xZero",
+          "op": "eq",
+          "type": "bool"
+        },
+        {
+          "label": "l7"
+        },
+        {
+          "args": [
+            "modY",
+            "zero"
+          ],
+          "dest": "yZero",
+          "op": "eq",
+          "type": "bool"
+        },
+        {
+          "label": "l8"
+        },
+        {
+          "args": [
+            "xZero",
+            "yZero"
+          ],
+          "dest": "bothZero",
+          "op": "and",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "bothZero"
+          ],
+          "labels": [
+            "l9",
+            "l10"
+          ],
+          "op": "br"
+        },
+        {
+          "label": "l9"
+        },
+        {
+          "args": [
+            "greater"
+          ],
+          "op": "print"
+        },
+        {
+          "labels": [
+            "l12"
+          ],
+          "op": "jmp"
+        },
+        {
+          "label": "l10"
+        },
+        {
+          "dest": "one",
+          "op": "const",
+          "type": "int",
+          "value": 1
+        },
+        {
+          "label": "l11"
+        },
+        {
+          "args": [
+            "greater",
+            "one"
+          ],
+          "dest": "greater",
+          "op": "add",
+          "type": "int"
+        },
+        {
+          "labels": [
+            "l3"
+          ],
+          "op": "jmp"
+        }
+      ],
+      "name": "main"
+    },
+    {
+      "args": [
+        {
+          "name": "val",
+          "type": "int"
+        },
+        {
+          "name": "mod",
+          "type": "int"
+        }
+      ],
+      "instrs": [
+        {
+          "label": "l0"
+        },
+        {
+          "args": [
+            "val",
+            "mod"
+          ],
+          "dest": "divisor",
+          "op": "div",
+          "type": "int"
+        },
+        {
+          "label": "l1"
+        },
+        {
+          "args": [
+            "divisor",
+            "mod"
+          ],
+          "dest": "multiple",
+          "op": "mul",
+          "type": "int"
+        },
+        {
+          "label": "l2"
+        },
+        {
+          "args": [
+            "val",
+            "multiple"
+          ],
+          "dest": "rem",
+          "op": "sub",
+          "type": "int"
+        },
+        {
+          "label": "l3"
+        },
+        {
+          "args": [
+            "rem"
+          ],
+          "op": "ret"
+        }
+      ],
+      "name": "getMod",
+      "type": "int"
+    }
+  ]
+}

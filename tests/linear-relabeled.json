@@ -1,0 +1,170 @@
+{
+  "functions": [
+    {
+      "instrs": [
+        {
+          "label": "l0"
+        },
+        {
+          "dest": "n",
+          "op": "const",
+          "type": "int",
+          "value": 10
+        },
+        {
+          "label": "l1"
+        },
+        {
+          "dest": "one",
+          "op": "const",
+          "type": "int",
+          "value": 1
+        },
+        {
+          "label": "l2"
+        },
+        {
+          "dest": "a",
+          "op": "const",
+          "type": "int",
+          "value": 1
+        },
+        {
+          "label": "l3"
+        },
+        {
+          "args": [
+            "n",
+            "one"
+          ],
+          "dest": "b",
+          "op": "add",
+          "type": "int"
+        },
+        {
+          "label": "l4"
+        },
+        {
+          "dest": "n",
+          "op": "const",
+          "type": "int",
+          "value": 50
+        },
+        {
+          "label": "l5"
+        },
+        {
+          "args": [
+            "b",
+            "a"
+          ],
+          "dest": "n",
+          "op": "gt",
+          "type": "bool"
+        },
+        {
+          "label": "l6"
+        },
+        {
+          "args": [
+            "a"
+          ],
+          "dest": "b",
+          "op": "id"
+        },
+        {
+          "label": "l7"
+        },
+        {
+          "args": [
+            "b",
+            "a"
+          ],
+          "dest": "a",
+          "op": "gt",
+          "type": "bool"
+        },
+        {
+          "label": "l8"
+        },
+        {
+          "args": [
+            "b",
+            "a"
+          ],
+          "dest": "one",
+          "op": "sub"
+        },
+        {
+          "label": "l9"
+        },
+        {
+          "args": [
+            "b",
+            "a"
+          ],
+          "dest": "n",
+          "op": "mul"
+        },
+        {
+          "label": "l10"
+        },
+        {
+          "args": [
+            "a",
+            "b"
+          ],
+          "dest": "a",
+          "op": "add",
+          "type": "int"
+        },
+        {
+          "label": "l11"
+        },
+        {
+          "args": [
+            "a",
+            "a"
+          ],
+          "dest": "n",
+          "op": "add",
+          "type": "int"
+        },
+        {
+          "label": "l12"
+        },
+        {
+          "args": [
+            "a",
+            "b"
+          ],
+          "dest": "b",
+          "op": "add",
+          "type": "int"
+        },
+        {
+          "label": "l13"
+        },
+        {
+          "args": [
+            "b",
+            "b"
+          ],
+          "dest": "b",
+          "op": "add",
+          "type": "int"
+        },
+        {
+          "label": "l14"
+        },
+        {
+          "args": [
+            "b"
+          ],
+          "op": "ret"
+        }
+      ],
+      "name": "main"
+    }
+  ]
+}

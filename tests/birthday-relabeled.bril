@@ -1,0 +1,81 @@
+# ARGS: 23;
+@main(n: float) {
+.l0:
+  v0: float = id n;
+.l1:
+  c: float = call @probability v0;
+.l2:
+  c: float = id c;
+.l3:
+  v1: float = id c;
+.l4:
+  print v1;
+.l5:
+  v2: int = const 0;
+}
+@probability(n: float): float {
+.l0:
+  v0: float = const 1;
+.l1:
+  prob: float = id v0;
+.l2:
+  v2: float = const 1;
+.l3:
+  i: float = id v2;
+.l4:
+  v3: float = id i;
+.l5:
+  v4: float = id n;
+.l6:
+  v5: bool = flt v3 v4;
+  br v5 .l7 .l23;
+.l7:
+  v6: float = const 365;
+.l8:
+  v7: float = id i;
+.l9:
+  v8: float = fsub v6 v7;
+.l10:
+  log: float = id v8;
+.l11:
+  v9: float = id log;
+.l12:
+  v10: float = const 365;
+.l13:
+  v11: float = fdiv v9 v10;
+.l14:
+  logUpdated: float = id v11;
+.l15:
+  v12: float = id prob;
+.l16:
+  v13: float = id logUpdated;
+.l17:
+  v14: float = fmul v12 v13;
+.l18:
+  prob: float = id v14;
+.l19:
+  v15: float = id i;
+.l20:
+  v16: float = const 1;
+.l21:
+  v17: float = fadd v15 v16;
+.l22:
+  i: float = id v17;
+  jmp .l4;
+.l23:
+  v18: float = const 1;
+.l24:
+  v19: float = id prob;
+.l25:
+  v20: float = const 100;
+.l26:
+  v21: float = fmul v19 v20;
+.l27:
+  v22: float = const 100;
+.l28:
+  v23: float = fdiv v21 v22;
+.l29:
+  v24: float = fsub v18 v23;
+.l30:
+  ret v24;
+}

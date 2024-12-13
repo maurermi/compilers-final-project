@@ -1,0 +1,392 @@
+{
+  "functions": [
+    {
+      "args": [
+        {
+          "name": "n",
+          "type": "int"
+        }
+      ],
+      "instrs": [
+        {
+          "label": "l0"
+        },
+        {
+          "args": [
+            "n"
+          ],
+          "op": "print"
+        },
+        {
+          "label": "l1"
+        },
+        {
+          "args": [
+            "n"
+          ],
+          "dest": "tot",
+          "funcs": [
+            "totient"
+          ],
+          "op": "call",
+          "type": "int"
+        },
+        {
+          "label": "l2"
+        },
+        {
+          "args": [
+            "tot"
+          ],
+          "op": "print"
+        }
+      ],
+      "name": "main"
+    },
+    {
+      "args": [
+        {
+          "name": "n",
+          "type": "int"
+        }
+      ],
+      "instrs": [
+        {
+          "label": "l0"
+        },
+        {
+          "args": [
+            "n"
+          ],
+          "dest": "result",
+          "op": "id",
+          "type": "int"
+        },
+        {
+          "label": "l1"
+        },
+        {
+          "dest": "p",
+          "op": "const",
+          "type": "int",
+          "value": 2
+        },
+        {
+          "label": "l2"
+        },
+        {
+          "dest": "one",
+          "op": "const",
+          "type": "int",
+          "value": 1
+        },
+        {
+          "label": "l3"
+        },
+        {
+          "dest": "zero",
+          "op": "const",
+          "type": "int",
+          "value": 0
+        },
+        {
+          "label": "l4"
+        },
+        {
+          "args": [
+            "p",
+            "p"
+          ],
+          "dest": "pp",
+          "op": "mul",
+          "type": "int"
+        },
+        {
+          "label": "l5"
+        },
+        {
+          "args": [
+            "pp",
+            "n"
+          ],
+          "dest": "cond",
+          "op": "le",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "cond"
+          ],
+          "labels": [
+            "l6",
+            "l15"
+          ],
+          "op": "br"
+        },
+        {
+          "label": "l6"
+        },
+        {
+          "args": [
+            "n",
+            "p"
+          ],
+          "dest": "npmod",
+          "funcs": [
+            "mod"
+          ],
+          "op": "call",
+          "type": "int"
+        },
+        {
+          "label": "l7"
+        },
+        {
+          "args": [
+            "npmod",
+            "zero"
+          ],
+          "dest": "if_cond",
+          "op": "eq",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "if_cond"
+          ],
+          "labels": [
+            "l8",
+            "l14"
+          ],
+          "op": "br"
+        },
+        {
+          "label": "l8"
+        },
+        {
+          "args": [
+            "n",
+            "p"
+          ],
+          "dest": "npmod",
+          "funcs": [
+            "mod"
+          ],
+          "op": "call",
+          "type": "int"
+        },
+        {
+          "label": "l9"
+        },
+        {
+          "args": [
+            "npmod",
+            "zero"
+          ],
+          "dest": "while_cond",
+          "op": "eq",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "while_cond"
+          ],
+          "labels": [
+            "l10",
+            "l12"
+          ],
+          "op": "br"
+        },
+        {
+          "label": "l10"
+        },
+        {
+          "args": [
+            "n",
+            "p"
+          ],
+          "dest": "npdiv",
+          "op": "div",
+          "type": "int"
+        },
+        {
+          "label": "l11"
+        },
+        {
+          "args": [
+            "npdiv"
+          ],
+          "dest": "n",
+          "op": "id",
+          "type": "int"
+        },
+        {
+          "labels": [
+            "l8"
+          ],
+          "op": "jmp"
+        },
+        {
+          "label": "l12"
+        },
+        {
+          "args": [
+            "result",
+            "p"
+          ],
+          "dest": "resdiv",
+          "op": "div",
+          "type": "int"
+        },
+        {
+          "label": "l13"
+        },
+        {
+          "args": [
+            "result",
+            "resdiv"
+          ],
+          "dest": "result",
+          "op": "sub",
+          "type": "int"
+        },
+        {
+          "label": "l14"
+        },
+        {
+          "args": [
+            "p",
+            "one"
+          ],
+          "dest": "p",
+          "op": "add",
+          "type": "int"
+        },
+        {
+          "labels": [
+            "l4"
+          ],
+          "op": "jmp"
+        },
+        {
+          "label": "l15"
+        },
+        {
+          "args": [
+            "n",
+            "one"
+          ],
+          "dest": "final_if_cond",
+          "op": "gt",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "final_if_cond"
+          ],
+          "labels": [
+            "l16",
+            "l18"
+          ],
+          "op": "br"
+        },
+        {
+          "label": "l16"
+        },
+        {
+          "args": [
+            "result",
+            "n"
+          ],
+          "dest": "resdiv",
+          "op": "div",
+          "type": "int"
+        },
+        {
+          "label": "l17"
+        },
+        {
+          "args": [
+            "result",
+            "resdiv"
+          ],
+          "dest": "result",
+          "op": "sub",
+          "type": "int"
+        },
+        {
+          "label": "l18"
+        },
+        {
+          "args": [
+            "result"
+          ],
+          "op": "ret"
+        }
+      ],
+      "name": "totient",
+      "type": "int"
+    },
+    {
+      "args": [
+        {
+          "name": "a",
+          "type": "int"
+        },
+        {
+          "name": "b",
+          "type": "int"
+        }
+      ],
+      "instrs": [
+        {
+          "label": "l0"
+        },
+        {
+          "args": [
+            "a",
+            "b"
+          ],
+          "dest": "ad",
+          "op": "div",
+          "type": "int"
+        },
+        {
+          "label": "l1"
+        },
+        {
+          "args": [
+            "b",
+            "ad"
+          ],
+          "dest": "mad",
+          "op": "mul",
+          "type": "int"
+        },
+        {
+          "label": "l2"
+        },
+        {
+          "args": [
+            "a",
+            "mad"
+          ],
+          "dest": "ans",
+          "op": "sub",
+          "type": "int"
+        },
+        {
+          "label": "l3"
+        },
+        {
+          "args": [
+            "ans"
+          ],
+          "op": "ret"
+        }
+      ],
+      "name": "mod",
+      "type": "int"
+    }
+  ]
+}

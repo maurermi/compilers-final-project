@@ -1,0 +1,329 @@
+{
+  "functions": [
+    {
+      "args": [
+        {
+          "name": "n",
+          "type": "int"
+        }
+      ],
+      "instrs": [
+        {
+          "label": "l0"
+        },
+        {
+          "dest": "i",
+          "op": "const",
+          "type": "int",
+          "value": 0
+        },
+        {
+          "label": "l1"
+        },
+        {
+          "dest": "res",
+          "op": "const",
+          "type": "int",
+          "value": 0
+        },
+        {
+          "label": "l2"
+        },
+        {
+          "dest": "one",
+          "op": "const",
+          "type": "int",
+          "value": 1
+        },
+        {
+          "label": "l3"
+        },
+        {
+          "dest": "non",
+          "op": "const",
+          "type": "int",
+          "value": -1
+        },
+        {
+          "label": "l4"
+        },
+        {
+          "dest": "zer",
+          "op": "const",
+          "type": "int",
+          "value": 0
+        },
+        {
+          "label": "l5"
+        },
+        {
+          "args": [
+            "n",
+            "zer"
+          ],
+          "dest": "nlz",
+          "op": "lt",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "nlz"
+          ],
+          "labels": [
+            "l6",
+            "l7"
+          ],
+          "op": "br"
+        },
+        {
+          "label": "l6"
+        },
+        {
+          "args": [
+            "n",
+            "non"
+          ],
+          "dest": "n",
+          "op": "mul",
+          "type": "int"
+        },
+        {
+          "label": "l7"
+        },
+        {
+          "args": [
+            "i",
+            "one"
+          ],
+          "dest": "i",
+          "op": "add",
+          "type": "int"
+        },
+        {
+          "label": "l8"
+        },
+        {
+          "args": [
+            "i",
+            "i"
+          ],
+          "dest": "isq",
+          "op": "mul",
+          "type": "int"
+        },
+        {
+          "label": "l9"
+        },
+        {
+          "args": [
+            "isq",
+            "n"
+          ],
+          "dest": "sqgt",
+          "op": "gt",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "sqgt"
+          ],
+          "labels": [
+            "l18",
+            "l10"
+          ],
+          "op": "br"
+        },
+        {
+          "label": "l10"
+        },
+        {
+          "args": [
+            "n",
+            "i"
+          ],
+          "dest": "m",
+          "funcs": [
+            "mod"
+          ],
+          "op": "call",
+          "type": "int"
+        },
+        {
+          "label": "l11"
+        },
+        {
+          "args": [
+            "m",
+            "zer"
+          ],
+          "dest": "eqz",
+          "op": "eq",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "eqz"
+          ],
+          "labels": [
+            "l12",
+            "l7"
+          ],
+          "op": "br"
+        },
+        {
+          "label": "l12"
+        },
+        {
+          "args": [
+            "i"
+          ],
+          "op": "print"
+        },
+        {
+          "label": "l13"
+        },
+        {
+          "args": [
+            "res",
+            "i"
+          ],
+          "dest": "res",
+          "op": "add",
+          "type": "int"
+        },
+        {
+          "label": "l14"
+        },
+        {
+          "args": [
+            "n",
+            "i"
+          ],
+          "dest": "d",
+          "op": "div",
+          "type": "int"
+        },
+        {
+          "label": "l15"
+        },
+        {
+          "args": [
+            "d",
+            "i"
+          ],
+          "dest": "deqi",
+          "op": "eq",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "deqi"
+          ],
+          "labels": [
+            "l7",
+            "l16"
+          ],
+          "op": "br"
+        },
+        {
+          "label": "l16"
+        },
+        {
+          "args": [
+            "d"
+          ],
+          "op": "print"
+        },
+        {
+          "label": "l17"
+        },
+        {
+          "args": [
+            "res",
+            "d"
+          ],
+          "dest": "res",
+          "op": "add",
+          "type": "int"
+        },
+        {
+          "labels": [
+            "l7"
+          ],
+          "op": "jmp"
+        },
+        {
+          "label": "l18"
+        },
+        {
+          "args": [
+            "res"
+          ],
+          "op": "print"
+        }
+      ],
+      "name": "main"
+    },
+    {
+      "args": [
+        {
+          "name": "dividend",
+          "type": "int"
+        },
+        {
+          "name": "divisor",
+          "type": "int"
+        }
+      ],
+      "instrs": [
+        {
+          "label": "l0"
+        },
+        {
+          "args": [
+            "dividend",
+            "divisor"
+          ],
+          "dest": "quot",
+          "op": "div",
+          "type": "int"
+        },
+        {
+          "label": "l1"
+        },
+        {
+          "args": [
+            "divisor",
+            "quot"
+          ],
+          "dest": "prod",
+          "op": "mul",
+          "type": "int"
+        },
+        {
+          "label": "l2"
+        },
+        {
+          "args": [
+            "dividend",
+            "prod"
+          ],
+          "dest": "diff",
+          "op": "sub",
+          "type": "int"
+        },
+        {
+          "label": "l3"
+        },
+        {
+          "args": [
+            "diff"
+          ],
+          "op": "ret"
+        }
+      ],
+      "name": "mod",
+      "type": "int"
+    }
+  ]
+}

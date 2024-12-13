@@ -1,0 +1,30 @@
+@main() {
+.l0:
+  z: int = const 0;
+.l1:
+  a: int = const 1;
+.l2:
+  b: int = const 2;
+.l3:
+  c: int = const 3;
+.l4:
+  d: int = const 4;
+.l5:
+  e: int = add a d;
+.l6:
+  f: int = add b c;
+.l7:
+  f: int = add b f;
+.l8:
+  r: bool = eq e z;
+  br r .l9 .l10;
+.l9:
+  d = sub e f;
+  jmp .l11;
+.l10:
+  d = add e f;
+.l11:
+  g: int = id d;
+.l12:
+  ret g;
+}

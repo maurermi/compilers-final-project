@@ -1,0 +1,37 @@
+# Recursive factorial;
+# ARGS: 20;
+@main(a: int) {
+.l0:
+  x: int = call @fact a;
+.l1:
+  print x;
+.l2:
+  v13: int = const 0;
+}
+@fact(a: int): int {
+.l0:
+  v1: int = id a;
+.l1:
+  v2: int = const 0;
+.l2:
+  v3: bool = eq v1 v2;
+  br v3 .l3 .l4;
+.l3:
+  v4: int = const 1;
+.l4:
+  ret v4;
+.l5:
+  v5: int = id a;
+.l6:
+  v6: int = id a;
+.l7:
+  v7: int = const 1;
+.l8:
+  v8: int = sub v6 v7;
+.l9:
+  v9: int = call @fact v8;
+.l10:
+  v10: int = mul v5 v9;
+.l11:
+  ret v10;
+}

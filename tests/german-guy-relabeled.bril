@@ -1,0 +1,28 @@
+@main(n: int) {
+.l0:
+  n: int = id n;
+.l1:
+  z: int = const 10;
+.l2:
+  x: int = const 0;
+.l3:
+  y: int = const 1;
+.l4:
+  two: int = const 2;
+.l5:
+  one: int = const 1;
+.l6:
+  b: bool = lt x n;
+  br b .l7 .l11;
+.l7:
+  z = mul x two;
+.l8:
+  z = add z y;
+.l9:
+  x = add x one;
+.l10:
+  y = add x z;
+  jmp .l6;
+.l11:
+  ret y;
+}

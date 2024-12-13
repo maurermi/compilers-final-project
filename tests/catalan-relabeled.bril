@@ -1,0 +1,45 @@
+# ARGS: 10;
+# Compute the 10th element in the catalan sequence, which is given by:
+#   c0 = 0; c(n+1) = sum(ci * c(n-i) for i = 0..n);
+@main(input: int) {
+.l0:
+  catn: int = call @catalan input;
+.l1:
+  print catn;
+}
+# Compute the nth term in the catalan sequence;
+@catalan(n: int):int{
+.l0:
+  one: int = const 1;
+.l1:
+  zero: int = const 0;
+.l2:
+  guard0: bool = eq n zero;
+  br guard0 .l3 .l3;
+.l3:
+  ret one;
+.l4:
+  sum: int = id zero;
+.l5:
+  idx: int = id zero;
+.l6:
+  n: int = sub n one;
+.l7:
+  guard1: bool = le idx n;
+  br guard1 .l7 .l13;
+.l8:
+  n2: int = sub n idx;
+.l9:
+  v1: int = call @catalan idx;
+.l10:
+  v2: int = call @catalan n2;
+.l11:
+  elti: int = mul v1 v2;
+.l12:
+  sum: int = add sum elti;
+.l13:
+  idx: int = add idx one;
+  jmp .l7;
+.l14:
+  ret sum;
+}
